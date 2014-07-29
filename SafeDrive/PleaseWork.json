@@ -1,0 +1,13 @@
+[{"name":"fuel_level","value":22.173929,"timestamp":1361454774.530000},
+{"name":"torque_at_transmission","value":-16,"timestamp":1361454774.532000},
+{"name":"accelerator_pedal_position","value":0,"timestamp":1361454774.533000},
+{"name":"torque_at_transmission","value":-16,"timestamp":1361454774.547000},
+{"name":"accelerator_pedal_position","value":0,"timestamp":1361454774.549000},
+{"name":"fuel_level","value":22.173929,"timestamp":1361454774.551000},
+{"name":"torque_at_transmission","value":-16,"timestamp":1361454774.563000},
+{"name":"accelerator_pedal_position","value":0,"timestamp":1361454774.564000},
+{"name":"fuel_level","value":22.173929,"timestamp":1361454774.569000},
+{"name":"torque_at_transmission","value":-15,"timestamp":1361454774.579000},
+{"name":"accelerator_pedal_position","value":0,"timestamp":1361454774.580000},
+{"name":"steering_wheel_angle","value":-435.5,"timestamp":1361454774.582000},
+{"name":"fuel_consumed_since_restart","value":0.996783,"timestamp":1361454774.584000}]

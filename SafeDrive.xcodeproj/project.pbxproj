@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07102A4C197EC5EC0029FB24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A4B197EC5EC0029FB24 /* Foundation.framework */; };
+		07102A4E197EC5EC0029FB24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A4D197EC5EC0029FB24 /* CoreGraphics.framework */; };
+		07102A50197EC5EC0029FB24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A4F197EC5EC0029FB24 /* UIKit.framework */; };
+		07102A56197EC5EC0029FB24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07102A54197EC5EC0029FB24 /* InfoPlist.strings */; };
+		07102A58197EC5EC0029FB24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07102A57197EC5EC0029FB24 /* main.m */; };
+		07102A5C197EC5EC0029FB24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07102A5B197EC5EC0029FB24 /* AppDelegate.m */; };
+		07102A5F197EC5EC0029FB24 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07102A5D197EC5EC0029FB24 /* Main_iPhone.storyboard */; };
+		07102A62197EC5EC0029FB24 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07102A60197EC5EC0029FB24 /* Main_iPad.storyboard */; };
+		07102A65197EC5EC0029FB24 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07102A64197EC5EC0029FB24 /* FirstViewController.m */; };
+		07102A68197EC5EC0029FB24 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07102A67197EC5EC0029FB24 /* SecondViewController.m */; };
+		07102A6A197EC5EC0029FB24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07102A69197EC5EC0029FB24 /* Images.xcassets */; };
+		07102A71197EC5EC0029FB24 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A70197EC5EC0029FB24 /* XCTest.framework */; };
+		07102A72197EC5EC0029FB24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A4B197EC5EC0029FB24 /* Foundation.framework */; };
+		07102A73197EC5EC0029FB24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A4F197EC5EC0029FB24 /* UIKit.framework */; };
+		07102A7B197EC5EC0029FB24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07102A79197EC5EC0029FB24 /* InfoPlist.strings */; };
+		07102A7D197EC5EC0029FB24 /* SafeDriveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07102A7C197EC5EC0029FB24 /* SafeDriveTests.m */; };
+		072045ED1985552800BD3A4F /* Very-Basic-info-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */; };
+		072256CD1983193200A60015 /* ProperInput.json in Resources */ = {isa = PBXBuildFile; fileRef = 072256CC1983193200A60015 /* ProperInput.json */; };
+		072256CF19831B3000A60015 /* PleaseWork.json in Resources */ = {isa = PBXBuildFile; fileRef = 072256CE19831B3000A60015 /* PleaseWork.json */; };
+		072256D119831F7B00A60015 /* driving.json in Resources */ = {isa = PBXBuildFile; fileRef = 072256D019831F7B00A60015 /* driving.json */; };
+		072256D31983242800A60015 /* zipcode.csv in Resources */ = {isa = PBXBuildFile; fileRef = 072256D21983242800A60015 /* zipcode.csv */; };
+		07273D3D198457EB00A56A2A /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07273D3C198457EB00A56A2A /* HistoryViewController.m */; };
+		0734A9D819816804006A5C5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0734A9D719816804006A5C5F /* MapKit.framework */; };
+		0737C3581980180F005156D2 /* Maps-Location-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3521980180F005156D2 /* Maps-Location-icon.png */; };
+		0737C3591980180F005156D2 /* Numbers-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3531980180F005156D2 /* Numbers-icon.png */; };
+		0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3541980180F005156D2 /* settings-icon-2.png */; };
+		0737C35B1980180F005156D2 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3551980180F005156D2 /* share.png */; };
+		0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */; };
+		0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3571980180F005156D2 /* Very-Basic-share-icon.png */; };
+		0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */; };
+		07B309661981E724007F63CE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07B309651981E724007F63CE /* Settings.bundle */; };
+		07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B3096A1982A36A007F63CE /* SettingsViewController.m */; };
+		07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */; };
+		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
+		07B78B3E198824C00090B872 /* FinalAsDriving.json in Resources */ = {isa = PBXBuildFile; fileRef = 07B78B3D198824C00090B872 /* FinalAsDriving.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07102A74197EC5EC0029FB24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07102A40197EC5EC0029FB24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07102A47197EC5EC0029FB24;
+			remoteInfo = SafeDrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07102A48197EC5EC0029FB24 /* SafeDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07102A4B197EC5EC0029FB24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07102A4D197EC5EC0029FB24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07102A4F197EC5EC0029FB24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07102A53197EC5EC0029FB24 /* SafeDrive-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SafeDrive-Info.plist"; sourceTree = "<group>"; };
+		07102A55197EC5EC0029FB24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07102A57197EC5EC0029FB24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07102A59197EC5EC0029FB24 /* SafeDrive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeDrive-Prefix.pch"; sourceTree = "<group>"; };
+		07102A5A197EC5EC0029FB24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		07102A5B197EC5EC0029FB24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		07102A5E197EC5EC0029FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		07102A61197EC5EC0029FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		07102A63197EC5EC0029FB24 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		07102A64197EC5EC0029FB24 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		07102A66197EC5EC0029FB24 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		07102A67197EC5EC0029FB24 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		07102A69197EC5EC0029FB24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07102A6F197EC5EC0029FB24 /* SafeDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07102A70197EC5EC0029FB24 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		07102A78197EC5EC0029FB24 /* SafeDriveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SafeDriveTests-Info.plist"; sourceTree = "<group>"; };
+		07102A7A197EC5EC0029FB24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07102A7C197EC5EC0029FB24 /* SafeDriveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeDriveTests.m; sourceTree = "<group>"; };
+		072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-info-icon-2.png"; sourceTree = "<group>"; };
+		072256CC1983193200A60015 /* ProperInput.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProperInput.json; sourceTree = "<group>"; };
+		072256CE19831B3000A60015 /* PleaseWork.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PleaseWork.json; sourceTree = "<group>"; };
+		072256D019831F7B00A60015 /* driving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = driving.json; sourceTree = "<group>"; };
+		072256D21983242800A60015 /* zipcode.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zipcode.csv; sourceTree = "<group>"; };
+		07273D3B198457DA00A56A2A /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		07273D3C198457EB00A56A2A /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		0734A9D719816804006A5C5F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0737C3521980180F005156D2 /* Maps-Location-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maps-Location-icon.png"; sourceTree = "<group>"; };
+		0737C3531980180F005156D2 /* Numbers-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Numbers-icon.png"; sourceTree = "<group>"; };
+		0737C3541980180F005156D2 /* settings-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon-2.png"; sourceTree = "<group>"; };
+		0737C3551980180F005156D2 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "System-Dashboard-icon-2.png"; sourceTree = "<group>"; };
+		0737C3571980180F005156D2 /* Very-Basic-share-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-share-icon.png"; sourceTree = "<group>"; };
+		0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-info-icon.png"; sourceTree = "<group>"; };
+		07B309651981E724007F63CE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		07B309691982A355007F63CE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		07B3096A1982A36A007F63CE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-down-icon.png"; sourceTree = "<group>"; };
+		07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-up-icon.png"; sourceTree = "<group>"; };
+		07B78B3D198824C00090B872 /* FinalAsDriving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinalAsDriving.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07102A45197EC5EC0029FB24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734A9D819816804006A5C5F /* MapKit.framework in Frameworks */,
+				07102A4E197EC5EC0029FB24 /* CoreGraphics.framework in Frameworks */,
+				07102A50197EC5EC0029FB24 /* UIKit.framework in Frameworks */,
+				07102A4C197EC5EC0029FB24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07102A6C197EC5EC0029FB24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07102A71197EC5EC0029FB24 /* XCTest.framework in Frameworks */,
+				07102A73197EC5EC0029FB24 /* UIKit.framework in Frameworks */,
+				07102A72197EC5EC0029FB24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07102A3F197EC5EC0029FB24 = {
+			isa = PBXGroup;
+			children = (
+				07B309651981E724007F63CE /* Settings.bundle */,
+				07102A51197EC5EC0029FB24 /* SafeDrive */,
+				07102A76197EC5EC0029FB24 /* SafeDriveTests */,
+				07102A4A197EC5EC0029FB24 /* Frameworks */,
+				07102A49197EC5EC0029FB24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07102A49197EC5EC0029FB24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07102A48197EC5EC0029FB24 /* SafeDrive.app */,
+				07102A6F197EC5EC0029FB24 /* SafeDriveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07102A4A197EC5EC0029FB24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0734A9D719816804006A5C5F /* MapKit.framework */,
+				07102A4B197EC5EC0029FB24 /* Foundation.framework */,
+				07102A4D197EC5EC0029FB24 /* CoreGraphics.framework */,
+				07102A4F197EC5EC0029FB24 /* UIKit.framework */,
+				07102A70197EC5EC0029FB24 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07102A51197EC5EC0029FB24 /* SafeDrive */ = {
+			isa = PBXGroup;
+			children = (
+				0737C35E1980181D005156D2 /* images */,
+				07102A5A197EC5EC0029FB24 /* AppDelegate.h */,
+				07102A5B197EC5EC0029FB24 /* AppDelegate.m */,
+				07102A5D197EC5EC0029FB24 /* Main_iPhone.storyboard */,
+				07102A60197EC5EC0029FB24 /* Main_iPad.storyboard */,
+				07102A63197EC5EC0029FB24 /* FirstViewController.h */,
+				07102A64197EC5EC0029FB24 /* FirstViewController.m */,
+				07273D3B198457DA00A56A2A /* HistoryViewController.h */,
+				07273D3C198457EB00A56A2A /* HistoryViewController.m */,
+				07B309691982A355007F63CE /* SettingsViewController.h */,
+				07B3096A1982A36A007F63CE /* SettingsViewController.m */,
+				07102A66197EC5EC0029FB24 /* SecondViewController.h */,
+				07102A67197EC5EC0029FB24 /* SecondViewController.m */,
+				07102A69197EC5EC0029FB24 /* Images.xcassets */,
+				07102A52197EC5EC0029FB24 /* Supporting Files */,
+			);
+			path = SafeDrive;
+			sourceTree = "<group>";
+		};
+		07102A52197EC5EC0029FB24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07B78B3D198824C00090B872 /* FinalAsDriving.json */,
+				072256D019831F7B00A60015 /* driving.json */,
+				072256D21983242800A60015 /* zipcode.csv */,
+				072256CC1983193200A60015 /* ProperInput.json */,
+				07102A53197EC5EC0029FB24 /* SafeDrive-Info.plist */,
+				07102A54197EC5EC0029FB24 /* InfoPlist.strings */,
+				07102A57197EC5EC0029FB24 /* main.m */,
+				07102A59197EC5EC0029FB24 /* SafeDrive-Prefix.pch */,
+				072256CE19831B3000A60015 /* PleaseWork.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07102A76197EC5EC0029FB24 /* SafeDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				07102A7C197EC5EC0029FB24 /* SafeDriveTests.m */,
+				07102A77197EC5EC0029FB24 /* Supporting Files */,
+			);
+			path = SafeDriveTests;
+			sourceTree = "<group>";
+		};
+		07102A77197EC5EC0029FB24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07102A78197EC5EC0029FB24 /* SafeDriveTests-Info.plist */,
+				07102A79197EC5EC0029FB24 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0737C35E1980181D005156D2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */,
+				07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */,
+				07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */,
+				0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */,
+				0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */,
+				0737C3571980180F005156D2 /* Very-Basic-share-icon.png */,
+				0737C3521980180F005156D2 /* Maps-Location-icon.png */,
+				0737C3531980180F005156D2 /* Numbers-icon.png */,
+				0737C3541980180F005156D2 /* settings-icon-2.png */,
+				0737C3551980180F005156D2 /* share.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07102A47197EC5EC0029FB24 /* SafeDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07102A80197EC5EC0029FB24 /* Build configuration list for PBXNativeTarget "SafeDrive" */;
+			buildPhases = (
+				07102A44197EC5EC0029FB24 /* Sources */,
+				07102A45197EC5EC0029FB24 /* Frameworks */,
+				07102A46197EC5EC0029FB24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafeDrive;
+			productName = SafeDrive;
+			productReference = 07102A48197EC5EC0029FB24 /* SafeDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07102A6E197EC5EC0029FB24 /* SafeDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07102A83197EC5EC0029FB24 /* Build configuration list for PBXNativeTarget "SafeDriveTests" */;
+			buildPhases = (
+				07102A6B197EC5EC0029FB24 /* Sources */,
+				07102A6C197EC5EC0029FB24 /* Frameworks */,
+				07102A6D197EC5EC0029FB24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07102A75197EC5EC0029FB24 /* PBXTargetDependency */,
+			);
+			name = SafeDriveTests;
+			productName = SafeDriveTests;
+			productReference = 07102A6F197EC5EC0029FB24 /* SafeDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07102A40197EC5EC0029FB24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ptiruvee;
+				TargetAttributes = {
+					07102A6E197EC5EC0029FB24 = {
+						TestTargetID = 07102A47197EC5EC0029FB24;
+					};
+				};
+			};
+			buildConfigurationList = 07102A43197EC5EC0029FB24 /* Build configuration list for PBXProject "SafeDrive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07102A3F197EC5EC0029FB24;
+			productRefGroup = 07102A49197EC5EC0029FB24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07102A47197EC5EC0029FB24 /* SafeDrive */,
+				07102A6E197EC5EC0029FB24 /* SafeDriveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07102A46197EC5EC0029FB24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0737C3581980180F005156D2 /* Maps-Location-icon.png in Resources */,
+				072256D119831F7B00A60015 /* driving.json in Resources */,
+				07102A62197EC5EC0029FB24 /* Main_iPad.storyboard in Resources */,
+				072256D31983242800A60015 /* zipcode.csv in Resources */,
+				0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */,
+				0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */,
+				07B309661981E724007F63CE /* Settings.bundle in Resources */,
+				072045ED1985552800BD3A4F /* Very-Basic-info-icon-2.png in Resources */,
+				07B78B3E198824C00090B872 /* FinalAsDriving.json in Resources */,
+				0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */,
+				07102A6A197EC5EC0029FB24 /* Images.xcassets in Resources */,
+				07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */,
+				0737C3591980180F005156D2 /* Numbers-icon.png in Resources */,
+				07102A5F197EC5EC0029FB24 /* Main_iPhone.storyboard in Resources */,
+				0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */,
+				072256CD1983193200A60015 /* ProperInput.json in Resources */,
+				07102A56197EC5EC0029FB24 /* InfoPlist.strings in Resources */,
+				072256CF19831B3000A60015 /* PleaseWork.json in Resources */,
+				0737C35B1980180F005156D2 /* share.png in Resources */,
+				07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07102A6D197EC5EC0029FB24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07102A7B197EC5EC0029FB24 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07102A44197EC5EC0029FB24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07102A68197EC5EC0029FB24 /* SecondViewController.m in Sources */,
+				07102A5C197EC5EC0029FB24 /* AppDelegate.m in Sources */,
+				07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */,
+				07102A65197EC5EC0029FB24 /* FirstViewController.m in Sources */,
+				07102A58197EC5EC0029FB24 /* main.m in Sources */,
+				07273D3D198457EB00A56A2A /* HistoryViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07102A6B197EC5EC0029FB24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07102A7D197EC5EC0029FB24 /* SafeDriveTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07102A75197EC5EC0029FB24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07102A47197EC5EC0029FB24 /* SafeDrive */;
+			targetProxy = 07102A74197EC5EC0029FB24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07102A54197EC5EC0029FB24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07102A55197EC5EC0029FB24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		07102A5D197EC5EC0029FB24 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07102A5E197EC5EC0029FB24 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		07102A60197EC5EC0029FB24 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07102A61197EC5EC0029FB24 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		07102A79197EC5EC0029FB24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07102A7A197EC5EC0029FB24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07102A7E197EC5EC0029FB24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07102A7F197EC5EC0029FB24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07102A81197EC5EC0029FB24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SafeDrive/SafeDrive-Prefix.pch";
+				INFOPLIST_FILE = "SafeDrive/SafeDrive-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07102A82197EC5EC0029FB24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SafeDrive/SafeDrive-Prefix.pch";
+				INFOPLIST_FILE = "SafeDrive/SafeDrive-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		07102A84197EC5EC0029FB24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SafeDrive.app/SafeDrive";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SafeDrive/SafeDrive-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SafeDriveTests/SafeDriveTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		07102A85197EC5EC0029FB24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SafeDrive.app/SafeDrive";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SafeDrive/SafeDrive-Prefix.pch";
+				INFOPLIST_FILE = "SafeDriveTests/SafeDriveTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07102A43197EC5EC0029FB24 /* Build configuration list for PBXProject "SafeDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07102A7E197EC5EC0029FB24 /* Debug */,
+				07102A7F197EC5EC0029FB24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07102A80197EC5EC0029FB24 /* Build configuration list for PBXNativeTarget "SafeDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07102A81197EC5EC0029FB24 /* Debug */,
+				07102A82197EC5EC0029FB24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07102A83197EC5EC0029FB24 /* Build configuration list for PBXNativeTarget "SafeDriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07102A84197EC5EC0029FB24 /* Debug */,
+				07102A85197EC5EC0029FB24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07102A40197EC5EC0029FB24 /* Project object */;
+}
