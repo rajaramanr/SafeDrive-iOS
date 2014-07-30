@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F1FC70DA-18C2-4FBC-BD9D-51A8A1916D7C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SafeDrive</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>49C7A4B6-7D5F-4F2F-BA12-2F8C6A6BCADE</key>
+		<string>https://github.com/rajaramanr/SafeDrive-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SafeDrive.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>49C7A4B6-7D5F-4F2F-BA12-2F8C6A6BCADE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rajaramanr/SafeDrive-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>49C7A4B6-7D5F-4F2F-BA12-2F8C6A6BCADE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>49C7A4B6-7D5F-4F2F-BA12-2F8C6A6BCADE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SafeDrive-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

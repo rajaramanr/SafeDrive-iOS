@@ -37,11 +37,12 @@
 		0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */; };
 		0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3571980180F005156D2 /* Very-Basic-share-icon.png */; };
 		0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */; };
-		07B309661981E724007F63CE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07B309651981E724007F63CE /* Settings.bundle */; };
 		07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B3096A1982A36A007F63CE /* SettingsViewController.m */; };
 		07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */; };
 		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
 		07B78B3E198824C00090B872 /* FinalAsDriving.json in Resources */ = {isa = PBXBuildFile; fileRef = 07B78B3D198824C00090B872 /* FinalAsDriving.json */; };
+		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
+		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,12 +93,14 @@
 		0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "System-Dashboard-icon-2.png"; sourceTree = "<group>"; };
 		0737C3571980180F005156D2 /* Very-Basic-share-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-share-icon.png"; sourceTree = "<group>"; };
 		0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-info-icon.png"; sourceTree = "<group>"; };
-		07B309651981E724007F63CE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		07B309691982A355007F63CE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		07B3096A1982A36A007F63CE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-down-icon.png"; sourceTree = "<group>"; };
 		07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-up-icon.png"; sourceTree = "<group>"; };
 		07B78B3D198824C00090B872 /* FinalAsDriving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinalAsDriving.json; sourceTree = "<group>"; };
+		07B78B3F198839280090B872 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		07B78B4119883D740090B872 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		07B78B4219883D870090B872 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0734A9D819816804006A5C5F /* MapKit.framework in Frameworks */,
+				07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */,
 				07102A4E197EC5EC0029FB24 /* CoreGraphics.framework in Frameworks */,
 				07102A50197EC5EC0029FB24 /* UIKit.framework in Frameworks */,
 				07102A4C197EC5EC0029FB24 /* Foundation.framework in Frameworks */,
@@ -128,7 +132,6 @@
 		07102A3F197EC5EC0029FB24 = {
 			isa = PBXGroup;
 			children = (
-				07B309651981E724007F63CE /* Settings.bundle */,
 				07102A51197EC5EC0029FB24 /* SafeDrive */,
 				07102A76197EC5EC0029FB24 /* SafeDriveTests */,
 				07102A4A197EC5EC0029FB24 /* Frameworks */,
@@ -148,6 +151,7 @@
 		07102A4A197EC5EC0029FB24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07B78B3F198839280090B872 /* FacebookSDK.framework */,
 				0734A9D719816804006A5C5F /* MapKit.framework */,
 				07102A4B197EC5EC0029FB24 /* Foundation.framework */,
 				07102A4D197EC5EC0029FB24 /* CoreGraphics.framework */,
@@ -173,6 +177,8 @@
 				07B3096A1982A36A007F63CE /* SettingsViewController.m */,
 				07102A66197EC5EC0029FB24 /* SecondViewController.h */,
 				07102A67197EC5EC0029FB24 /* SecondViewController.m */,
+				07B78B4119883D740090B872 /* ShareViewController.h */,
+				07B78B4219883D870090B872 /* ShareViewController.m */,
 				07102A69197EC5EC0029FB24 /* Images.xcassets */,
 				07102A52197EC5EC0029FB24 /* Supporting Files */,
 			);
@@ -312,7 +318,6 @@
 				072256D31983242800A60015 /* zipcode.csv in Resources */,
 				0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */,
 				0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */,
-				07B309661981E724007F63CE /* Settings.bundle in Resources */,
 				072045ED1985552800BD3A4F /* Very-Basic-info-icon-2.png in Resources */,
 				07B78B3E198824C00090B872 /* FinalAsDriving.json in Resources */,
 				0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */,
@@ -348,6 +353,7 @@
 				07102A5C197EC5EC0029FB24 /* AppDelegate.m in Sources */,
 				07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */,
 				07102A65197EC5EC0029FB24 /* FirstViewController.m in Sources */,
+				07B78B4319883D870090B872 /* ShareViewController.m in Sources */,
 				07102A58197EC5EC0029FB24 /* main.m in Sources */,
 				07273D3D198457EB00A56A2A /* HistoryViewController.m in Sources */,
 			);
@@ -485,6 +491,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SafeDrive/SafeDrive-Prefix.pch";
 				INFOPLIST_FILE = "SafeDrive/SafeDrive-Info.plist";
@@ -498,6 +508,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SafeDrive/SafeDrive-Prefix.pch";
 				INFOPLIST_FILE = "SafeDrive/SafeDrive-Info.plist";
