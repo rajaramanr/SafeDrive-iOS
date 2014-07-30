@@ -8,13 +8,12 @@
 #import "AccidentRegionDAO.h"
 #import "AccidentRegion.h"
 
-@implementation AccidenRegionDAO
+@implementation AccidentRegionDAO
 
 // This function provides
 - (NSMutableArray *) getAccidents:(NSString*)county of:(NSString*) state {
     NSMutableArray *accidents = [[NSMutableArray alloc] init];
     @try {
-        NSLog([state stringByAppendingString: county]);
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"Supporting Files/AccidentDB.sqlite"];
         BOOL success = [fileMgr fileExistsAtPath:dbPath];

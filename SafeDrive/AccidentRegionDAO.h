@@ -11,7 +11,7 @@
 
 extern NSString *countyName;
 extern NSString *stateName;
-@interface AccidenRegionDAO : NSObject {
+@interface AccidentRegionDAO : NSObject {
     sqlite3 *db;
 }
 

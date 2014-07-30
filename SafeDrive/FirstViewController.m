@@ -7,6 +7,8 @@
 //
 
 #import "FirstViewController.h"
+#import "AccidentRegion.h"
+#import "AccidentRegionDAO.h"
 
 @interface FirstViewController ()
 
@@ -24,6 +26,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)gotoThisCounty:(id)sender {
+    AccidentRegionDAO *regions = [[AccidentRegionDAO alloc] init];
+    [regions getAccidents: @"ALLENGENY" of:@"Pennsylvania"];
 }
 
 @end
