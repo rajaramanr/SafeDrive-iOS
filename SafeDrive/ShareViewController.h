@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ShareViewController : UIViewController
-
+@property (copy,nonatomic) NSString *message;
 @end
