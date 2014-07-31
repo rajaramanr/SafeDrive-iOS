@@ -16,18 +16,29 @@
 
 @implementation HistoryViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // Do any additional setup after loading the view, typically from a nib.
     NSMutableArray *violations = [[NSMutableArray alloc] init];
     ViolationDAO *violateData = [[ViolationDAO alloc] init];
     violations = [violateData getViolations];
+    
+    self.violations = [[NSMutableArray alloc] init];
+    self.dates = [[NSMutableArray alloc] init];
+    
     for (Violation *vio in violations) {
-        NSLog(vio.dateOfViolation);
+        [self.dates addObject:vio.dateOfViolation];
+        [self.violations addObject:[NSString stringWithFormat:@"%d", vio.count]];
     }
-    self.dates = @[@"Jan",@"Feb",@"Mar",@"Apr",@"May",@"Jun",@"Jul",@"Aug",@"Sep",@"Oct",@"Nov",@"Dec"];
-    self.violations=@[@"2",@"4",@"1",@"0",@"8",@"3",@"5",@"0",@"1",@"2",@"1",@"1"];
+    [self.Table reloadData];
+    NSLog(@"Done fetching records");
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,7 +49,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

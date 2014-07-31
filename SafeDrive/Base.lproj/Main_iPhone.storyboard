@@ -436,6 +436,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="em4-QN-GUy"/>
+                    <connections>
+                        <outlet property="Table" destination="mZR-D4-DZO" id="brx-Iu-g80"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZW-lA-ekz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

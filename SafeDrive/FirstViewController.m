@@ -47,9 +47,7 @@
 }
 
 - (IBAction)GetBreached:(id)sender {
-    NSLog(@"Gonna Get a violation");
-    ViolationDAO *vio = [[ViolationDAO alloc] init];
-    vio.getViolations;
+    
 }
 
 

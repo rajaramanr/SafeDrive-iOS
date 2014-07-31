@@ -10,7 +10,8 @@
 
 @interface HistoryViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
-@property (copy,nonatomic) NSArray *dates;
-@property (copy,nonatomic) NSArray *violations;
+@property (retain,nonatomic) NSMutableArray *dates;
+@property (retain,nonatomic) NSMutableArray *violations;
+@property (weak, nonatomic) IBOutlet UITableView *Table;
 
 @end

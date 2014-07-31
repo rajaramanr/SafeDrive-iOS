@@ -12,6 +12,7 @@
 
 @implementation ViolationDAO
 
+
 - (NSMutableArray *)getViolations {
     NSMutableArray *violations = [[NSMutableArray alloc] init];
     @try {
@@ -21,7 +22,6 @@
         if(!success) {
             NSLog(@"Cannot locate database at '%@'", dbPath);
         }
-        NSLog(@"Found DB file");
         if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
         {
             NSLog(@"An error has occured.");
@@ -32,16 +32,11 @@
             NSLog(@"Problem with prepare statement");
         }
         while(sqlite3_step(sqlStmt) == SQLITE_ROW) {
-            NSLog(@"Got a record");
             Violation *violation = [[Violation alloc] init];
             violation.violationId = sqlite3_column_int(sqlStmt, 0);
             violation.dateOfViolation =  [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStmt, 1)];
             violation.count = sqlite3_column_int(sqlStmt, 2);
-            NSLog(violation.dateOfViolation);
-            NSLog([NSString stringWithFormat:@"%d", violation.count]);
             [violations addObject:violation];
-            AccidentRegionDAO *dao = [[AccidentRegionDAO alloc] init];
-            [dao getAccidents:@"ALLEGHENY" of:@"Pennsylvania"];
         }
     }
     @catch (NSException *exception) {
@@ -70,10 +65,30 @@
             {
                 NSLog(@"Failed to create table");
             }
-            NSDate *date = [[NSDate alloc] init];
-            NSString *insertSQL = [NSString stringWithFormat:
+
+            NSDate *date = [NSDate date];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setTimeZone:[NSTimeZone localTimeZone]];
+            [formatter setDateFormat:@"yyyy/MM/dd"];
+            NSString *dateString = [formatter stringFromDate:date];
+            
+            
+            NSInteger count = [self checkForRecord: dateString];
+            
+            
+            NSString *insertSQL;
+            NSLog([NSString stringWithFormat:@"%d", count]);
+            if (count == 0) {
+                insertSQL = [NSString stringWithFormat:
                                    @"INSERT INTO history (date, count) VALUES (\"%@\", \"%d\")",
-                                   date , 1];
+                                   dateString , 1];
+            } else {
+                NSLog(@"Updating");
+                count = count + 1;
+                insertSQL = [NSString stringWithFormat:
+                                       @"update history set count = \"%d\" where date=\"%@\"",
+                                        count, dateString];
+            }
             const char *insert_stmt = [insertSQL UTF8String];
             sqlite3_prepare_v2(db, insert_stmt,
                                -1, &sqlStmt, NULL);
@@ -92,4 +107,36 @@
     }
 }
 
+-(NSInteger) checkForRecord:(NSString*)dateString {
+    NSInteger count = 0;
+    @try {
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+        BOOL success = [fileMgr fileExistsAtPath:dbPath];
+        if(!success) {
+            NSLog(@"Cannot locate database at '%@'", dbPath);
+        }
+        if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
+        {
+            NSLog(@"An error has occured.");
+        }
+        char *sql = "select * from history where date = ?";
+        sqlite3_stmt *sqlStmt;
+        if(sqlite3_prepare(db, sql, -1, &sqlStmt, NULL) != SQLITE_OK) {
+            NSLog(@"Problem with prepare statement");
+        } else {
+            NSLog(@"COming to prepare our thala");
+            sqlite3_bind_text(sqlStmt, 1, [dateString UTF8String], -1, SQLITE_TRANSIENT);
+        }
+        while(sqlite3_step(sqlStmt) == SQLITE_ROW) {
+            count = sqlite3_column_int(sqlStmt, 2);
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception occured due to %@", [exception reason]);
+    }
+    @finally {
+        return count;
+    }
+}
 @end
