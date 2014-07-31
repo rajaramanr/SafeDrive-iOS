@@ -44,7 +44,6 @@
 		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
 		AFDFF354198A84AD0095F39A /* ViolationDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF353198A84AD0095F39A /* ViolationDAO.m */; };
 		AFDFF357198A84C60095F39A /* Violation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF356198A84C60095F39A /* Violation.m */; };
-		AFEE26A819899EA400576965 /* FinalAsDriving.json in Resources */ = {isa = PBXBuildFile; fileRef = AFEE26A719899EA400576965 /* FinalAsDriving.json */; };
 		AFEE26AC19899F2B00576965 /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AB19899F2B00576965 /* JSONReader.m */; };
 		AFEE26AF19899F8600576965 /* AccidentRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AE19899F8600576965 /* AccidentRegion.m */; };
 		AFEE26B21989A01D00576965 /* AccidentRegionDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26B11989A01D00576965 /* AccidentRegionDAO.m */; };
@@ -112,7 +111,6 @@
 		AFDFF353198A84AD0095F39A /* ViolationDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationDAO.m; sourceTree = "<group>"; };
 		AFDFF355198A84C60095F39A /* Violation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Violation.h; sourceTree = "<group>"; };
 		AFDFF356198A84C60095F39A /* Violation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Violation.m; sourceTree = "<group>"; };
-		AFEE26A719899EA400576965 /* FinalAsDriving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinalAsDriving.json; sourceTree = "<group>"; };
 		AFEE26AA19899F2B00576965 /* JSONReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONReader.h; sourceTree = "<group>"; };
 		AFEE26AB19899F2B00576965 /* JSONReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONReader.m; sourceTree = "<group>"; };
 		AFEE26AD19899F8600576965 /* AccidentRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccidentRegion.h; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 		07102A52197EC5EC0029FB24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFEE26A719899EA400576965 /* FinalAsDriving.json */,
 				072256D019831F7B00A60015 /* driving.json */,
 				072256D21983242800A60015 /* zipcode.csv */,
 				072256CC1983193200A60015 /* ProperInput.json */,
@@ -376,7 +373,6 @@
 				0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */,
 				072256CD1983193200A60015 /* ProperInput.json in Resources */,
 				07102A56197EC5EC0029FB24 /* InfoPlist.strings in Resources */,
-				AFEE26A819899EA400576965 /* FinalAsDriving.json in Resources */,
 				072256CF19831B3000A60015 /* PleaseWork.json in Resources */,
 				0737C35B1980180F005156D2 /* share.png in Resources */,
 				AFEE26B71989A1F100576965 /* AccidentDB.sqlite in Resources */,
