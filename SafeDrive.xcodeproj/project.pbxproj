@@ -40,7 +40,6 @@
 		07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B3096A1982A36A007F63CE /* SettingsViewController.m */; };
 		07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */; };
 		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
-		07B78B3E198824C00090B872 /* FinalAsDriving.json in Resources */ = {isa = PBXBuildFile; fileRef = 07B78B3D198824C00090B872 /* FinalAsDriving.json */; };
 		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
 		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
 		07D5116E198ADC6800C56828 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D5116D198ADC6800C56828 /* AudioToolbox.framework */; };
@@ -99,7 +98,6 @@
 		07B3096A1982A36A007F63CE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-down-icon.png"; sourceTree = "<group>"; };
 		07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-up-icon.png"; sourceTree = "<group>"; };
-		07B78B3D198824C00090B872 /* FinalAsDriving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinalAsDriving.json; sourceTree = "<group>"; };
 		07B78B3F198839280090B872 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		07B78B4119883D740090B872 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		07B78B4219883D870090B872 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				07D5116F198ADF8300C56828 /* Select.mp3 */,
-				07B78B3D198824C00090B872 /* FinalAsDriving.json */,
 				072256D019831F7B00A60015 /* driving.json */,
 				072256D21983242800A60015 /* zipcode.csv */,
 				072256CC1983193200A60015 /* ProperInput.json */,
@@ -326,7 +323,6 @@
 				0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */,
 				0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */,
 				072045ED1985552800BD3A4F /* Very-Basic-info-icon-2.png in Resources */,
-				07B78B3E198824C00090B872 /* FinalAsDriving.json in Resources */,
 				0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */,
 				07102A6A197EC5EC0029FB24 /* Images.xcassets in Resources */,
 				07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */,
