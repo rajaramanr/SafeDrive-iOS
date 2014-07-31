@@ -82,6 +82,8 @@
     
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = CLLocationCoordinate2DMake([[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
+    point.title = @"Where am I?";
+    point.subtitle = @"I'm here!!!";
     
     [annotation addObject:point];
     
@@ -94,6 +96,15 @@
     NSLog(@"Location %f %f",[[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
     
     count+=2;
+    if([[[location objectAtIndex:count] stringValue] isEqualToString:@"42.291576"]) {
+        self.view.backgroundColor = [UIColor redColor];
+        CFBundleRef mainBundle = CFBundleGetMainBundle();
+        CFURLRef soundFileURLRef;
+        soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"Select", CFSTR ("mp3"),NULL);
+        UInt32 soundID;
+        AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+    }
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -107,17 +118,18 @@
     [mapView setRegion:mapRegion animated: YES];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    // 1
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 42.291508;
-    zoomLocation.longitude= -83.23764;
-    
-    // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-    
-    // 3
-    //[_mapView setRegion:viewRegion animated:YES];
-}
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    // 1
+//    CLLocationCoordinate2D zoomLocation;
+//    zoomLocation.latitude = 42.291508;
+//    zoomLocation.longitude= -83.23764;
+//    
+//    // 2
+//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+//    
+//    // 3
+//    //[_mapView setRegion:viewRegion animated:YES];
+//}
 
 @end

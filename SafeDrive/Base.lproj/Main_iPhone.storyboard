@@ -185,21 +185,37 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYQ-EC-krm">
-                                <rect key="frame" x="106" y="97" width="99" height="30"/>
+                                <rect key="frame" x="86" y="123" width="127" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update Status">
+                                <state key="normal" title="Blocked road">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="postStatusUpdateWithShareDialog:" destination="MRJ-0f-9aH" eventType="touchUpInside" id="Vvc-47-r9P"/>
+                                    <action selector="UpdateRoadBlockedStatus:" destination="MRJ-0f-9aH" eventType="touchUpInside" id="9ry-5L-uWs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vro-64-j0V">
+                                <rect key="frame" x="86" y="158" width="127" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Heavy Traffic">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UpdateTrafficStatus:" destination="MRJ-0f-9aH" eventType="touchUpInside" id="rfI-aM-t2w"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGk-0F-3Ek" customClass="FBLoginView">
+                                <rect key="frame" x="20" y="399" width="280" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" image="Very-Basic-share-icon.png" id="fme-56-Dqu"/>
                     <connections>
-                        <outlet property="StatusUpdateWithShareDialogButton" destination="HYQ-EC-krm" id="Kyv-xh-qqv"/>
+                        <outlet property="UpdateStatusButton" destination="HYQ-EC-krm" id="wAO-IP-3td"/>
+                        <outlet property="UpdateTrafficButton" destination="vro-64-j0V" id="V5q-ub-Xct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sp-hI-qfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
