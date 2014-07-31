@@ -53,16 +53,6 @@
                                     <action selector="createViolationRecord:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="rwD-Nw-BmM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVC-y9-bFW">
-                                <rect key="frame" x="113" y="135" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Breached">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="GetBreached:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="0gf-e7-YYt"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -437,7 +427,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="em4-QN-GUy"/>
                     <connections>
-                        <outlet property="Table" destination="mZR-D4-DZO" id="brx-Iu-g80"/>
+                        <outlet property="Table" destination="mZR-D4-DZO" id="juE-Y8-uUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZW-lA-ekz" userLabel="First Responder" sceneMemberID="firstResponder"/>
