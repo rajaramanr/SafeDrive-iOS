@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
+- (IBAction)createViolationRecord:(id)sender;
+- (IBAction)GetBreached:(id)sender;
 
 @end

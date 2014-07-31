@@ -42,6 +42,8 @@
 		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
 		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
 		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
+		AFDFF354198A84AD0095F39A /* ViolationDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF353198A84AD0095F39A /* ViolationDAO.m */; };
+		AFDFF357198A84C60095F39A /* Violation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF356198A84C60095F39A /* Violation.m */; };
 		AFEE26A819899EA400576965 /* FinalAsDriving.json in Resources */ = {isa = PBXBuildFile; fileRef = AFEE26A719899EA400576965 /* FinalAsDriving.json */; };
 		AFEE26AC19899F2B00576965 /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AB19899F2B00576965 /* JSONReader.m */; };
 		AFEE26AF19899F8600576965 /* AccidentRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AE19899F8600576965 /* AccidentRegion.m */; };
@@ -106,6 +108,10 @@
 		07B78B3F198839280090B872 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		07B78B4119883D740090B872 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		07B78B4219883D870090B872 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		AFDFF352198A84AD0095F39A /* ViolationDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationDAO.h; sourceTree = "<group>"; };
+		AFDFF353198A84AD0095F39A /* ViolationDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationDAO.m; sourceTree = "<group>"; };
+		AFDFF355198A84C60095F39A /* Violation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Violation.h; sourceTree = "<group>"; };
+		AFDFF356198A84C60095F39A /* Violation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Violation.m; sourceTree = "<group>"; };
 		AFEE26A719899EA400576965 /* FinalAsDriving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinalAsDriving.json; sourceTree = "<group>"; };
 		AFEE26AA19899F2B00576965 /* JSONReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONReader.h; sourceTree = "<group>"; };
 		AFEE26AB19899F2B00576965 /* JSONReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONReader.m; sourceTree = "<group>"; };
@@ -263,6 +269,10 @@
 				AFEE26AE19899F8600576965 /* AccidentRegion.m */,
 				AFEE26B01989A01D00576965 /* AccidentRegionDAO.h */,
 				AFEE26B11989A01D00576965 /* AccidentRegionDAO.m */,
+				AFDFF352198A84AD0095F39A /* ViolationDAO.h */,
+				AFDFF353198A84AD0095F39A /* ViolationDAO.m */,
+				AFDFF355198A84C60095F39A /* Violation.h */,
+				AFDFF356198A84C60095F39A /* Violation.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -395,7 +405,9 @@
 				07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */,
 				07102A65197EC5EC0029FB24 /* FirstViewController.m in Sources */,
 				AFEE26AF19899F8600576965 /* AccidentRegion.m in Sources */,
+				AFDFF354198A84AD0095F39A /* ViolationDAO.m in Sources */,
 				AFEE26AC19899F2B00576965 /* JSONReader.m in Sources */,
+				AFDFF357198A84C60095F39A /* Violation.m in Sources */,
 				07B78B4319883D870090B872 /* ShareViewController.m in Sources */,
 				AFEE26B21989A01D00576965 /* AccidentRegionDAO.m in Sources */,
 				07102A58197EC5EC0029FB24 /* main.m in Sources */,

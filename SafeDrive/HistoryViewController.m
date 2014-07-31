@@ -7,6 +7,8 @@
 //
 
 #import "HistoryViewController.h"
+#import "ViolationDAO.h"
+#import "Violation.h"
 
 @interface HistoryViewController ()
 
@@ -18,6 +20,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSMutableArray *violations = [[NSMutableArray alloc] init];
+    ViolationDAO *violateData = [[ViolationDAO alloc] init];
+    violations = [violateData getViolations];
+    for (Violation *vio in violations) {
+        NSLog(vio.dateOfViolation);
+    }
     self.dates = @[@"Jan",@"Feb",@"Mar",@"Apr",@"May",@"Jun",@"Jul",@"Aug",@"Sep",@"Oct",@"Nov",@"Dec"];
     self.violations=@[@"2",@"4",@"1",@"0",@"8",@"3",@"5",@"0",@"1",@"2",@"1",@"1"];
 }

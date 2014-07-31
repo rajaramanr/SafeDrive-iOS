@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
-extern NSString *countyName;
-extern NSString *stateName;
 @interface AccidentRegionDAO : NSObject {
     sqlite3 *db;
 }

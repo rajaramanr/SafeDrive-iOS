@@ -12,10 +12,10 @@
 
 // This function provides
 - (NSMutableArray *) getAccidents:(NSString*)county of:(NSString*) state {
-    NSMutableArray *accidents = [[NSMutableArray alloc] init];
+    NSMutableArray *accidentAtThatRegion = [[NSMutableArray alloc] init];
     @try {
         NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"Supporting Files/AccidentDB.sqlite"];
+        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
         BOOL success = [fileMgr fileExistsAtPath:dbPath];
         if(!success) {
             NSLog(@"Cannot locate database at '%@'", dbPath);
@@ -40,14 +40,15 @@
             region.regionName = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStmt, 1)];
             region.stateName = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStmt, 3)];
             region.countyName = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStmt, 2)];
-            [accidents addObject:region];
+            NSLog(region.regionName);
+            [accidentAtThatRegion addObject:region];
         }
     }
     @catch (NSException *exception) {
         NSLog(@"Exception occured due to %@", [exception reason]);
     }
     @finally {
-        return accidents;
+        return accidentAtThatRegion;
     }
 }
 
