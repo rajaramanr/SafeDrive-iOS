@@ -15,6 +15,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *value;
 
--(void) getCurrentStatus;
+-(NSMutableArray*) readJSON;
 
 @end

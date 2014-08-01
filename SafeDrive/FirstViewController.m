@@ -12,10 +12,14 @@
 #import "Violation.h"
 #import "ViolationDAO.h"
 #import "JSONReader.h"
+#import "PresentStatus.h"
 
 @interface FirstViewController ()
 
 @end
+NSMutableArray* allStatus;
+double currentSpeed = 0;
+int currentIndex = 0;
 
 @implementation FirstViewController
 
@@ -23,10 +27,33 @@
 {
     [super viewDidLoad];
     
-    // Get Data from the backend here and use this data in the second view controller
-    // Check the second view controller json. Its modified.
-    // Will do sound alert next.
-	// Do any additional setup after loading the view, typically from a nib.
+    // Get the current speed and location from JSON file provided
+    allStatus = [[NSMutableArray alloc] init];
+    JSONReader *reader = [[JSONReader alloc] init];
+    allStatus = reader.readJSON;
+    
+    
+    [self reflectOnUI:[allStatus[currentIndex] getSpeed]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(doIteratively:)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+-(void) doIteratively:(NSTimer *)timer {
+    currentIndex++;
+    [self reflectOnUI:[allStatus[currentIndex] getSpeed]];
+}
+
+-(void) reflectOnUI: (double) currentSpeed{
+    self.currentSpeed.text = [NSString stringWithFormat:@"%f",currentSpeed];
+    // self.speedLimit.text = [NSString stringWithFormat:@"%f", speedLimit];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +76,6 @@
 
 - (IBAction)readJson:(id)sender {
     JSONReader *reader = [[JSONReader alloc] init];
-    reader.getCurrentStatus;
+    reader.readJSON;
 }
 @end

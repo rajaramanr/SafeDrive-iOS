@@ -12,13 +12,8 @@
 @implementation JSONReader
 
 
--(void) readFromFile {
-    
-}
-
 -(NSMutableArray*) readJSON{
     NSMutableArray *statuses = [[NSMutableArray alloc] init];
-    NSLog(@"Reading JSON");
     NSString *filepath = [[NSBundle mainBundle] pathForResource:@"DrivingCleaned" ofType:@"json"];
     NSError *error;
     NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
@@ -58,7 +53,6 @@
             longt = status.longitude;
         }
     }
-    NSLog(@"%@", statuses);
     return statuses;
 }
 
