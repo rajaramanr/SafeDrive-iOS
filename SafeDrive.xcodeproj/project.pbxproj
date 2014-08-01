@@ -42,6 +42,10 @@
 		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
 		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
 		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
+		07D5116E198ADC6800C56828 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D5116D198ADC6800C56828 /* AudioToolbox.framework */; };
+		07D51170198ADF8300C56828 /* Select.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07D5116F198ADF8300C56828 /* Select.mp3 */; };
+		AF3BD37F198AEC91000D35E6 /* DrivingCleaned.json in Resources */ = {isa = PBXBuildFile; fileRef = AF3BD37E198AEC91000D35E6 /* DrivingCleaned.json */; };
+		AF3BD382198AF0EF000D35E6 /* PresentStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BD381198AF0EF000D35E6 /* PresentStatus.m */; };
 		AFDFF354198A84AD0095F39A /* ViolationDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF353198A84AD0095F39A /* ViolationDAO.m */; };
 		AFDFF357198A84C60095F39A /* Violation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF356198A84C60095F39A /* Violation.m */; };
 		AFEE26AC19899F2B00576965 /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AB19899F2B00576965 /* JSONReader.m */; };
@@ -107,6 +111,11 @@
 		07B78B3F198839280090B872 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		07B78B4119883D740090B872 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		07B78B4219883D870090B872 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		07D5116D198ADC6800C56828 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		07D5116F198ADF8300C56828 /* Select.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Select.mp3; sourceTree = "<group>"; };
+		AF3BD37E198AEC91000D35E6 /* DrivingCleaned.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DrivingCleaned.json; sourceTree = "<group>"; };
+		AF3BD380198AF0EF000D35E6 /* PresentStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentStatus.h; sourceTree = "<group>"; };
+		AF3BD381198AF0EF000D35E6 /* PresentStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentStatus.m; sourceTree = "<group>"; };
 		AFDFF352198A84AD0095F39A /* ViolationDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationDAO.h; sourceTree = "<group>"; };
 		AFDFF353198A84AD0095F39A /* ViolationDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationDAO.m; sourceTree = "<group>"; };
 		AFDFF355198A84C60095F39A /* Violation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Violation.h; sourceTree = "<group>"; };
@@ -127,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFEE26B41989A06400576965 /* libsqlite3.dylib in Frameworks */,
+				07D5116E198ADC6800C56828 /* AudioToolbox.framework in Frameworks */,
 				0734A9D819816804006A5C5F /* MapKit.framework in Frameworks */,
 				07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */,
 				07102A4E197EC5EC0029FB24 /* CoreGraphics.framework in Frameworks */,
@@ -171,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				AFEE26B31989A06400576965 /* libsqlite3.dylib */,
+				07D5116D198ADC6800C56828 /* AudioToolbox.framework */,
 				07B78B3F198839280090B872 /* FacebookSDK.framework */,
 				0734A9D719816804006A5C5F /* MapKit.framework */,
 				07102A4B197EC5EC0029FB24 /* Foundation.framework */,
@@ -210,6 +221,8 @@
 		07102A52197EC5EC0029FB24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF3BD37E198AEC91000D35E6 /* DrivingCleaned.json */,
+				07D5116F198ADF8300C56828 /* Select.mp3 */,
 				072256D019831F7B00A60015 /* driving.json */,
 				072256D21983242800A60015 /* zipcode.csv */,
 				072256CC1983193200A60015 /* ProperInput.json */,
@@ -270,6 +283,8 @@
 				AFDFF353198A84AD0095F39A /* ViolationDAO.m */,
 				AFDFF355198A84C60095F39A /* Violation.h */,
 				AFDFF356198A84C60095F39A /* Violation.m */,
+				AF3BD380198AF0EF000D35E6 /* PresentStatus.h */,
+				AF3BD381198AF0EF000D35E6 /* PresentStatus.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -361,6 +376,7 @@
 				0737C3581980180F005156D2 /* Maps-Location-icon.png in Resources */,
 				072256D119831F7B00A60015 /* driving.json in Resources */,
 				07102A62197EC5EC0029FB24 /* Main_iPad.storyboard in Resources */,
+				AF3BD37F198AEC91000D35E6 /* DrivingCleaned.json in Resources */,
 				072256D31983242800A60015 /* zipcode.csv in Resources */,
 				0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */,
 				0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */,
@@ -409,6 +425,7 @@
 				AFEE26B21989A01D00576965 /* AccidentRegionDAO.m in Sources */,
 				07102A58197EC5EC0029FB24 /* main.m in Sources */,
 				07273D3D198457EB00A56A2A /* HistoryViewController.m in Sources */,
+				AF3BD382198AF0EF000D35E6 /* PresentStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

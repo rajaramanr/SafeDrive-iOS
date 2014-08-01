@@ -10,4 +10,11 @@
 
 @interface JSONReader : NSObject
 
+@property NSMutableArray* jsonObject;
+@property (strong, nonatomic) NSString *timestamp;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *value;
+
+-(void) getCurrentStatus;
+
 @end

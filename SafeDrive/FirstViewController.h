@@ -10,6 +10,6 @@
 
 @interface FirstViewController : UIViewController
 - (IBAction)createViolationRecord:(id)sender;
-- (IBAction)GetBreached:(id)sender;
+- (IBAction)readJson:(id)sender;
 
 @end

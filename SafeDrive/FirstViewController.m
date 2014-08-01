@@ -11,6 +11,7 @@
 #import "AccidentRegionDAO.h"
 #import "Violation.h"
 #import "ViolationDAO.h"
+#import "JSONReader.h"
 
 @interface FirstViewController ()
 
@@ -46,4 +47,8 @@
     vio.addViolation;
 }
 
+- (IBAction)readJson:(id)sender {
+    JSONReader *reader = [[JSONReader alloc] init];
+    reader.getCurrentStatus;
+}
 @end
