@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
-
+@interface SettingsViewController : UITableViewController
+- (IBAction)LocationBased:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *AlertStatus;
 @property (copy,nonatomic) NSArray *dates;
 @end

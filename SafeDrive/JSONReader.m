@@ -14,7 +14,7 @@
 
 -(NSMutableArray*) readJSON{
     NSMutableArray *statuses = [[NSMutableArray alloc] init];
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"DrivingCleaned" ofType:@"json"];
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"changedLtLg" ofType:@"json"];
     NSError *error;
     NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
     if (error)

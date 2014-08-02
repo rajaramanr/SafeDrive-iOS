@@ -13,33 +13,38 @@
 #import "ViolationDAO.h"
 #import "JSONReader.h"
 #import "PresentStatus.h"
+#import "RestAPICall.h"
+#import "SpeedLimit.h"
 
 @interface FirstViewController ()
 
 @end
+
 NSMutableArray* allStatus;
-double currentSpeed = 0;
 int currentIndex = 0;
+RestAPICall* callAPI;
+SpeedLimit* thisRegion;
+int invalidateTimerCount = 0;
 
 @implementation FirstViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Get the current speed and location from JSON file provided
     allStatus = [[NSMutableArray alloc] init];
+    callAPI = [[RestAPICall alloc] init];
+    
     JSONReader *reader = [[JSONReader alloc] init];
     allStatus = reader.readJSON;
-    
-    
-    [self reflectOnUI:[allStatus[currentIndex] getSpeed]];
+    invalidateTimerCount = [allStatus count];
+    thisRegion = [callAPI callAPI:[allStatus[currentIndex] getLatitude] : [allStatus[currentIndex] getLongitude]];
+    [self reflectOnUI:[allStatus[currentIndex] getSpeed]:thisRegion];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [NSTimer scheduledTimerWithTimeInterval:1.0
+    [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
                                    selector:@selector(doIteratively:)
                                    userInfo:nil
@@ -48,18 +53,27 @@ int currentIndex = 0;
 
 -(void) doIteratively:(NSTimer *)timer {
     currentIndex++;
-    [self reflectOnUI:[allStatus[currentIndex] getSpeed]];
+    NSLog(@"Current counter = %d size = %d", currentIndex, invalidateTimerCount);
+    if(currentIndex >= invalidateTimerCount - 1) {
+        [timer invalidate];
+    }
+    thisRegion = [callAPI callAPI:[allStatus[currentIndex] getLatitude] : [allStatus[currentIndex] getLongitude]];
+    if([allStatus[currentIndex] getSpeed] > [thisRegion getSpeedLimit]) {
+        NSLog(@"Adding Violation");
+        ViolationDAO *vio = [[ViolationDAO alloc] init];
+        vio.addViolation;
+    }
+    [self reflectOnUI:[allStatus[currentIndex] getSpeed]:thisRegion];
 }
 
--(void) reflectOnUI: (double) currentSpeed{
+-(void) reflectOnUI: (double) currentSpeed : (SpeedLimit*) thisRegion{
     self.currentSpeed.text = [NSString stringWithFormat:@"%f",currentSpeed];
-    // self.speedLimit.text = [NSString stringWithFormat:@"%f", speedLimit];
+    self.speedLimit.text = [NSString stringWithFormat:@"%f", thisRegion.getSpeedLimit];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 // Write for reading this data from the location got from the json.
