@@ -42,6 +42,9 @@
 		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
 		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
 		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
+		07D14ABA198D47BF0025E3BD /* JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D14AB9198D47BF0025E3BD /* JSON.m */; };
+		07D14ABE198D47ED0025E3BD /* PresentStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D14ABD198D47ED0025E3BD /* PresentStatus.m */; };
+		07D14AC0198D48060025E3BD /* alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 07D14ABF198D48060025E3BD /* alert.caf */; };
 		AFDFF354198A84AD0095F39A /* ViolationDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF353198A84AD0095F39A /* ViolationDAO.m */; };
 		AFDFF357198A84C60095F39A /* Violation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFF356198A84C60095F39A /* Violation.m */; };
 		AFEE26AC19899F2B00576965 /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AB19899F2B00576965 /* JSONReader.m */; };
@@ -107,6 +110,11 @@
 		07B78B3F198839280090B872 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		07B78B4119883D740090B872 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		07B78B4219883D870090B872 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		07D14AB9198D47BF0025E3BD /* JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSON.m; sourceTree = "<group>"; };
+		07D14ABB198D47CD0025E3BD /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		07D14ABC198D47DF0025E3BD /* PresentStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentStatus.h; sourceTree = "<group>"; };
+		07D14ABD198D47ED0025E3BD /* PresentStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentStatus.m; sourceTree = "<group>"; };
+		07D14ABF198D48060025E3BD /* alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alert.caf; sourceTree = "<group>"; };
 		AFDFF352198A84AD0095F39A /* ViolationDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationDAO.h; sourceTree = "<group>"; };
 		AFDFF353198A84AD0095F39A /* ViolationDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationDAO.m; sourceTree = "<group>"; };
 		AFDFF355198A84C60095F39A /* Violation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Violation.h; sourceTree = "<group>"; };
@@ -210,6 +218,7 @@
 		07102A52197EC5EC0029FB24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07D14ABF198D48060025E3BD /* alert.caf */,
 				072256D019831F7B00A60015 /* driving.json */,
 				072256D21983242800A60015 /* zipcode.csv */,
 				072256CC1983193200A60015 /* ProperInput.json */,
@@ -260,6 +269,10 @@
 		AFEE26A919899F1900576965 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				07D14ABD198D47ED0025E3BD /* PresentStatus.m */,
+				07D14ABC198D47DF0025E3BD /* PresentStatus.h */,
+				07D14ABB198D47CD0025E3BD /* JSON.h */,
+				07D14AB9198D47BF0025E3BD /* JSON.m */,
 				AFEE26AA19899F2B00576965 /* JSONReader.h */,
 				AFEE26AB19899F2B00576965 /* JSONReader.m */,
 				AFEE26AD19899F8600576965 /* AccidentRegion.h */,
@@ -369,9 +382,9 @@
 				07102A6A197EC5EC0029FB24 /* Images.xcassets in Resources */,
 				07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */,
 				0737C3591980180F005156D2 /* Numbers-icon.png in Resources */,
-				07D51170198ADF8300C56828 /* Select.mp3 in Resources */,
 				07102A5F197EC5EC0029FB24 /* Main_iPhone.storyboard in Resources */,
 				0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */,
+				07D14AC0198D48060025E3BD /* alert.caf in Resources */,
 				072256CD1983193200A60015 /* ProperInput.json in Resources */,
 				07102A56197EC5EC0029FB24 /* InfoPlist.strings in Resources */,
 				072256CF19831B3000A60015 /* PleaseWork.json in Resources */,
@@ -397,10 +410,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D14ABA198D47BF0025E3BD /* JSON.m in Sources */,
 				07102A68197EC5EC0029FB24 /* SecondViewController.m in Sources */,
 				07102A5C197EC5EC0029FB24 /* AppDelegate.m in Sources */,
 				07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */,
 				07102A65197EC5EC0029FB24 /* FirstViewController.m in Sources */,
+				07D14ABE198D47ED0025E3BD /* PresentStatus.m in Sources */,
 				AFEE26AF19899F8600576965 /* AccidentRegion.m in Sources */,
 				AFDFF354198A84AD0095F39A /* ViolationDAO.m in Sources */,
 				AFEE26AC19899F2B00576965 /* JSONReader.m in Sources */,

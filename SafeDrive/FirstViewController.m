@@ -11,10 +11,17 @@
 #import "AccidentRegionDAO.h"
 #import "Violation.h"
 #import "ViolationDAO.h"
+#import "JSONReader.h"
+#import "JSON.h"
+#import "PresentStatus.h"
 
 @interface FirstViewController ()
 
 @end
+
+NSMutableArray *allStatus;
+JSON *obj;
+BOOL alertFlag = false;
 
 @implementation FirstViewController
 
@@ -22,19 +29,38 @@
 {
     [super viewDidLoad];
     
-    // Get Data from the backend here and use this data in the second view controller
-    // Check the second view controller json. Its modified.
-    // Will do sound alert next.
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-// Write for reading this data from the location got from the json.
+-(void) doIteratively:(NSTimer *)timer {
+    counter = counter+1;
+    [self reflectOnUI:[allStatus[counter] getSpeed]];
+}
+
+-(void) reflectOnUI: (double) currentSpeed{
+    self.currentSpeed.text = [NSString stringWithFormat:@"%f",currentSpeed];
+    //    self.speedLimit.text = [NSString stringWithFormat:@"%f", speedLimit];
+    double speedLimit = 30.0;
+    CFURLRef soundFileURLRef;
+    UInt32 soundID;
+    
+    if(currentSpeed > speedLimit) {
+        alertFlag = true;
+        CFBundleRef mainBundle = CFBundleGetMainBundle();
+        soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"alert", CFSTR ("caf"),NULL);
+        AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+    }
+    else if(alertFlag){
+        alertFlag = false;
+        AudioServicesDisposeSystemSoundID(soundID);
+    }
+}
+
 - (IBAction)gotoThisCounty:(id)sender {
     AccidentRegionDAO *regions = [[AccidentRegionDAO alloc] init];
     [regions getAccidents: @"ALLENGENY" of:@"Pennsylvania"];
@@ -44,6 +70,16 @@
     NSLog(@"Gonna Create a violation");
     ViolationDAO *vio = [[ViolationDAO alloc] init];
     vio.addViolation;
+}
+
+- (IBAction)readJson:(id)sender {
+    obj=[JSON getInstance];
+    allStatus = obj.reader.readJSON;
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(doIteratively:)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 
 @end

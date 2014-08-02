@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface FirstViewController : UIViewController
 - (IBAction)createViolationRecord:(id)sender;
-- (IBAction)GetBreached:(id)sender;
+- (IBAction)readJson:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *currentSpeed;
+@property (weak, nonatomic) IBOutlet UILabel *speedLimit;
 
 @end
