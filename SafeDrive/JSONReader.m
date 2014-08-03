@@ -14,7 +14,7 @@
 
 -(NSMutableArray*) readJSON{
     NSMutableArray *statuses = [[NSMutableArray alloc] init];
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"changedLtLg" ofType:@"json"];
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"all" ofType:@"json"];
     NSError *error;
     NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
     if (error)
@@ -22,8 +22,9 @@
     // maybe for debugging...
     NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
     double timestamp = 0;
-    double lat = 0;
-    double longt = 0;
+    double lastSpeed = 0;
+    double lastLat = 0;
+    double lastLongt = 0;
     PresentStatus *status;
     for(NSString* str in listArray) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData: [str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
@@ -31,10 +32,13 @@
         if(timestampFromFile != timestamp) {
             if (status != NULL) {
                 if(status.latitude == 0) {
-                    status.latitude = lat;
+                    status.latitude = lastLat;
                 }
                 if (status.longitude == 0) {
-                    status.longitude = longt;
+                    status.longitude = lastLongt;
+                }
+                if (status.speed == 0) {
+                    status.speed = lastSpeed;
                 }
                 [statuses addObject:status];
             }
@@ -45,12 +49,13 @@
         NSString *name = [dict valueForKey:@"name"];
         if([name isEqualToString:@"vehicle_speed"]) {
             status.speed = [[dict valueForKey:@"value"] doubleValue];
+            lastSpeed = status.speed;
         } else if([name isEqualToString:@"latitude"]) {
             status.latitude = [[dict valueForKey:@"value"] doubleValue];
-            lat = status.latitude;
+            lastLat = status.latitude;
         } else if([name isEqualToString:@"longitude"]) {
             status.longitude = [[dict valueForKey:@"value"] doubleValue];
-            longt = status.longitude;
+            lastLongt = status.longitude;
         }
     }
     return statuses;

@@ -57,6 +57,7 @@ double threshold = 0.0;
         ViolationDAO *vio = [[ViolationDAO alloc] init];
         vio.addViolation;
     }
+    [self checkThisCounty:thisRegion];
     [self reflectOnUI:[allStatus[counter] getSpeed]:speedLimit];
 }
 
@@ -66,17 +67,17 @@ double threshold = 0.0;
     CFURLRef soundFileURLRef;
     UInt32 soundID;
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"isAlertEnabled"]) {
-    if(currentSpeed > speedLimit + threshold) {
-        alertFlag = true;
-        CFBundleRef mainBundle = CFBundleGetMainBundle();
-        soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"alert", CFSTR ("caf"),NULL);
-        AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
-        AudioServicesPlaySystemSound(soundID);
-    }
-    else if(alertFlag){
-        alertFlag = false;
-        AudioServicesDisposeSystemSoundID(soundID);
-    }
+        if(currentSpeed > speedLimit + threshold) {
+            alertFlag = true;
+            CFBundleRef mainBundle = CFBundleGetMainBundle();
+            soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"alert", CFSTR ("caf"),NULL);
+            AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+            AudioServicesPlaySystemSound(soundID);
+        }
+        else if(alertFlag){
+            alertFlag = false;
+            AudioServicesDisposeSystemSoundID(soundID);
+        }
     }
 }
 
@@ -86,15 +87,14 @@ double threshold = 0.0;
 }
 
 // Write for reading this data from the location got from the json.
-- (IBAction)gotoThisCounty:(id)sender {
+- (void)checkThisCounty:(SpeedLimit*) thisRegion {
     AccidentRegionDAO *regions = [[AccidentRegionDAO alloc] init];
-    [regions getAccidents: @"ALLENGENY" of:@"Pennsylvania"];
-}
-
-- (IBAction)createViolationRecord:(id)sender {
-    NSLog(@"Gonna Create a violation");
-    ViolationDAO *vio = [[ViolationDAO alloc] init];
-    vio.addViolation;
+    BOOL isAccidentProne = [regions getAccidents: [[thisRegion getCounty] uppercaseString] of:[thisRegion getState] region:[[thisRegion getStreet] uppercaseString]];
+    if(isAccidentProne) {
+        self.view.backgroundColor = [UIColor redColor];
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 - (IBAction)readJson:(id)sender {
@@ -105,7 +105,7 @@ double threshold = 0.0;
     invalidateTimerCount = [allStatus count];
     //Initializing call to API
     callAPI = [[RestAPICall alloc] init];
-
+    
     [NSTimer scheduledTimerWithTimeInterval:2.0
                                      target:self
                                    selector:@selector(doIteratively:)

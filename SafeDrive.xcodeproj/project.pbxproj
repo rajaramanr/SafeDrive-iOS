@@ -47,8 +47,8 @@
 		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
 		07B78B4319883D870090B872 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B78B4219883D870090B872 /* ShareViewController.m */; };
 		07D5116E198ADC6800C56828 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D5116D198ADC6800C56828 /* AudioToolbox.framework */; };
-		AF3BD37F198AEC91000D35E6 /* DrivingCleaned.json in Resources */ = {isa = PBXBuildFile; fileRef = AF3BD37E198AEC91000D35E6 /* DrivingCleaned.json */; };
 		AF3BD382198AF0EF000D35E6 /* PresentStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BD381198AF0EF000D35E6 /* PresentStatus.m */; };
+		AFA5854E198EABB600D03612 /* all.json in Resources */ = {isa = PBXBuildFile; fileRef = AFA5854D198EABB600D03612 /* all.json */; };
 		AFD756FB198D76F3006452BF /* SpeedLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD756FA198D76F3006452BF /* SpeedLimit.m */; };
 		AFD756FE198D795A006452BF /* RestAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD756FD198D795A006452BF /* RestAPICall.m */; };
 		AFD75700198D7D55006452BF /* changedLtLg.json in Resources */ = {isa = PBXBuildFile; fileRef = AFD756FF198D7D55006452BF /* changedLtLg.json */; };
@@ -58,8 +58,6 @@
 		AFEE26AF19899F8600576965 /* AccidentRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26AE19899F8600576965 /* AccidentRegion.m */; };
 		AFEE26B21989A01D00576965 /* AccidentRegionDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE26B11989A01D00576965 /* AccidentRegionDAO.m */; };
 		AFEE26B41989A06400576965 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEE26B31989A06400576965 /* libsqlite3.dylib */; };
-		AFEE26B71989A1F100576965 /* AccidentDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AFEE26B61989A1F100576965 /* AccidentDB.sqlite */; };
-		AFEE26B81989A1F100576965 /* AccidentDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AFEE26B61989A1F100576965 /* AccidentDB.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,9 +121,10 @@
 		07B78B4119883D740090B872 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		07B78B4219883D870090B872 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		07D5116D198ADC6800C56828 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		AF3BD37E198AEC91000D35E6 /* DrivingCleaned.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DrivingCleaned.json; sourceTree = "<group>"; };
 		AF3BD380198AF0EF000D35E6 /* PresentStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentStatus.h; sourceTree = "<group>"; };
 		AF3BD381198AF0EF000D35E6 /* PresentStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentStatus.m; sourceTree = "<group>"; };
+		AFA5854C198EA47200D03612 /* AccidentDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AccidentDB.sqlite; sourceTree = "<group>"; };
+		AFA5854D198EABB600D03612 /* all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all.json; sourceTree = "<group>"; };
 		AFD756F9198D76F3006452BF /* SpeedLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedLimit.h; sourceTree = "<group>"; };
 		AFD756FA198D76F3006452BF /* SpeedLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedLimit.m; sourceTree = "<group>"; };
 		AFD756FC198D795A006452BF /* RestAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPICall.h; sourceTree = "<group>"; };
@@ -142,7 +141,6 @@
 		AFEE26B01989A01D00576965 /* AccidentRegionDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccidentRegionDAO.h; sourceTree = "<group>"; };
 		AFEE26B11989A01D00576965 /* AccidentRegionDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccidentRegionDAO.m; sourceTree = "<group>"; };
 		AFEE26B31989A06400576965 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		AFEE26B61989A1F100576965 /* AccidentDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AccidentDB.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,7 +315,7 @@
 		AFEE26B51989A1D400576965 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				AFEE26B61989A1F100576965 /* AccidentDB.sqlite */,
+				AFA5854C198EA47200D03612 /* AccidentDB.sqlite */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -402,7 +400,6 @@
 				072256D119831F7B00A60015 /* driving.json in Resources */,
 				07102A62197EC5EC0029FB24 /* Main_iPad.storyboard in Resources */,
 				AFD75700198D7D55006452BF /* changedLtLg.json in Resources */,
-				AF3BD37F198AEC91000D35E6 /* DrivingCleaned.json in Resources */,
 				072256D31983242800A60015 /* zipcode.csv in Resources */,
 				0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */,
 				0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */,
@@ -415,8 +412,8 @@
 				072256CD1983193200A60015 /* ProperInput.json in Resources */,
 				07102A56197EC5EC0029FB24 /* InfoPlist.strings in Resources */,
 				072256CF19831B3000A60015 /* PleaseWork.json in Resources */,
+				AFA5854E198EABB600D03612 /* all.json in Resources */,
 				0737C35B1980180F005156D2 /* share.png in Resources */,
-				AFEE26B71989A1F100576965 /* AccidentDB.sqlite in Resources */,
 				07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */,
 				07996702198EA5800043C1F9 /* connect-icon.png in Resources */,
 				07996706198EAFC00043C1F9 /* blackcar.png in Resources */,
@@ -428,7 +425,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFEE26B81989A1F100576965 /* AccidentDB.sqlite in Resources */,
 				07102A7B197EC5EC0029FB24 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

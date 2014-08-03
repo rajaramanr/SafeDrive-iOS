@@ -13,6 +13,6 @@
     sqlite3 *db;
 }
 
-- (NSMutableArray *) getAccidents:(NSString*)county of:(NSString*) state;
+- (BOOL) getAccidents:(NSString*)county of:(NSString*) state region:(NSString*) street;
 
 @end
