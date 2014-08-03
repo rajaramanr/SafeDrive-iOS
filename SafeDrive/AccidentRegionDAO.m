@@ -12,7 +12,6 @@
 
 // This function provides
 - (BOOL) getAccidents:(NSString*)county of:(NSString*) state region:(NSString*) street{
-    NSLog(@"Checking for street : %@ in county: %@ at state: %@", street, county, state);
     if (street != NULL)
         street = [[@"%" stringByAppendingString:street] stringByAppendingString:@"%"];
     BOOL isAccidentProne = false;

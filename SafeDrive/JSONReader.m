@@ -19,7 +19,6 @@
     NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
     if (error)
         NSLog(@"Error reading file: %@", error.localizedDescription);
-    // maybe for debugging...
     NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
     double timestamp = 0;
     double lastSpeed = 0;

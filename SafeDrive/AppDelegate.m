@@ -15,7 +15,7 @@
 {
     // Override point for customization after application launch.
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLocationBased"];
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"alertStatus"];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAlertEnabled"];
     [[NSUserDefaults standardUserDefaults] setDouble:30 forKey:@"UserDefinedSpeed"];
     return YES;
 }

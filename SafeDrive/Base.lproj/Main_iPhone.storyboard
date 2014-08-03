@@ -517,34 +517,6 @@
             </objects>
             <point key="canvasLocation" x="346" y="687"/>
         </scene>
-        <!--Settings View Controller - Settings-->
-        <scene sceneID="Wfm-eC-5se">
-            <objects>
-                <viewController id="xS0-QQ-Hn3" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7fv-ZT-caM"/>
-                        <viewControllerLayoutGuide type="bottom" id="jSx-yQ-lef"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uy4-fI-VZk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hlr-tv-YN3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Safe Drive" id="Mkk-O3-i5V"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-icon-2.png" id="RJP-Zp-Exl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wcl-pD-L5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="829" y="727"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Maps-Location-icon.png" width="32" height="32"/>
