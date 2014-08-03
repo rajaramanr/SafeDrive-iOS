@@ -269,8 +269,6 @@
 		AFEE26A919899F1900576965 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				07D14ABD198D47ED0025E3BD /* PresentStatus.m */,
-				07D14ABC198D47DF0025E3BD /* PresentStatus.h */,
 				07D14ABB198D47CD0025E3BD /* JSON.h */,
 				07D14AB9198D47BF0025E3BD /* JSON.m */,
 				AFEE26AA19899F2B00576965 /* JSONReader.h */,
@@ -283,6 +281,8 @@
 				AFDFF353198A84AD0095F39A /* ViolationDAO.m */,
 				AFDFF355198A84C60095F39A /* Violation.h */,
 				AFDFF356198A84C60095F39A /* Violation.m */,
+				07D14ABC198D47DF0025E3BD /* PresentStatus.h */,
+				07D14ABD198D47ED0025E3BD /* PresentStatus.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
