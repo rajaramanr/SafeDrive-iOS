@@ -12,6 +12,7 @@
 #import "Violation.h"
 #import "ViolationDAO.h"
 #import "JSONReader.h"
+#import "JSON.h"
 #import "PresentStatus.h"
 #import "RestAPICall.h"
 #import "SpeedLimit.h"
@@ -21,7 +22,8 @@
 @end
 
 NSMutableArray* allStatus;
-int currentIndex = 0;
+JSON *obj;
+BOOL alertFlag = false;
 RestAPICall* callAPI;
 SpeedLimit* thisRegion;
 int invalidateTimerCount = 0;
@@ -31,33 +33,15 @@ int invalidateTimerCount = 0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    allStatus = [[NSMutableArray alloc] init];
-    callAPI = [[RestAPICall alloc] init];
-    
-    JSONReader *reader = [[JSONReader alloc] init];
-    allStatus = reader.readJSON;
-    invalidateTimerCount = [allStatus count];
-    thisRegion = [callAPI callAPI:[allStatus[currentIndex] getLatitude] : [allStatus[currentIndex] getLongitude]];
-    [self reflectOnUI:[allStatus[currentIndex] getSpeed]:thisRegion];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(doIteratively:)
-                                   userInfo:nil
-                                    repeats:YES];
 }
 
 -(void) doIteratively:(NSTimer *)timer {
-    currentIndex++;
+    counter = counter+1;
     double speedLimit = 0;
-    if(currentIndex >= invalidateTimerCount - 1) {
+    if(counter >= invalidateTimerCount - 1) {
         [timer invalidate];
     }
-    thisRegion = [callAPI callAPI:[allStatus[currentIndex] getLatitude] : [allStatus[currentIndex] getLongitude]];
+    thisRegion = [callAPI callAPI:[allStatus[counter] getLatitude] : [allStatus[counter] getLongitude]];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLocationBased"] == NO ){
         NSLog(@"Only user defined speed limit");
         speedLimit = [[NSUserDefaults standardUserDefaults] doubleForKey:@"UserDefinedSpeed"];
@@ -66,17 +50,32 @@ int invalidateTimerCount = 0;
         NSLog(@"Obtaining from location");
         speedLimit = [thisRegion getSpeedLimit];
     }
-//    if([allStatus[currentIndex] getSpeed] > speedLimit) {
-//        NSLog(@"Adding Violation");
-//        ViolationDAO *vio = [[ViolationDAO alloc] init];
-//        vio.addViolation;
-//    }
-    [self reflectOnUI:[allStatus[currentIndex] getSpeed]:thisRegion];
+    if([allStatus[counter] getSpeed] > speedLimit) {
+        NSLog(@"Adding Violation");
+        ViolationDAO *vio = [[ViolationDAO alloc] init];
+        vio.addViolation;
+    }
+    [self reflectOnUI:[allStatus[counter] getSpeed]:thisRegion];
 }
 
 -(void) reflectOnUI: (double) currentSpeed : (SpeedLimit*) thisRegion{
     self.currentSpeed.text = [NSString stringWithFormat:@"%f",currentSpeed];
     self.speedLimit.text = [NSString stringWithFormat:@"%f", thisRegion.getSpeedLimit];
+    CFURLRef soundFileURLRef;
+    UInt32 soundID;
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"isAlertEnabled"]) {
+    if(currentSpeed > thisRegion.getSpeedLimit) {
+        alertFlag = true;
+        CFBundleRef mainBundle = CFBundleGetMainBundle();
+        soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"alert", CFSTR ("caf"),NULL);
+        AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+    }
+    else if(alertFlag){
+        alertFlag = false;
+        AudioServicesDisposeSystemSoundID(soundID);
+    }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +96,18 @@ int invalidateTimerCount = 0;
 }
 
 - (IBAction)readJson:(id)sender {
-    JSONReader *reader = [[JSONReader alloc] init];
-    reader.readJSON;
+    //Reading JSON
+    
+    obj=[JSON getInstance];
+    allStatus = obj.reader.readJSON;
+    invalidateTimerCount = [allStatus count];
+    //Initializing call to API
+    callAPI = [[RestAPICall alloc] init];
+
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(doIteratively:)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 @end

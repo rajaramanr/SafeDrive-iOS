@@ -7,12 +7,16 @@
 //
 
 #import "SecondViewController.h"
+#import "JSON.h"
+#import "PresentStatus.h"
 #define METERS_PER_MILE 1609.344
 @interface SecondViewController ()
 {
     NSMutableArray *location;
     int count;
     NSMutableArray *annotation;
+    JSON *obj;
+    NSMutableArray *allStatus;
 }
 @end
 
@@ -24,21 +28,20 @@
     
     annotation = [NSMutableArray array];
     
-    //self.mapView.delegate = (id)self;
-    
 	if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
     {
-        //Just to reset map view to update user location again on button tap
         self.mapView.showsUserLocation = NO;
-        self.mapView.showsUserLocation = YES;
     }
     else
     {
         UIAlertView *noLocationAccessAlert = [[UIAlertView alloc] initWithTitle:@"Oops!!!" message:@"The application needs to access your location, kindly authorize it from Settings -> Privacy." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [noLocationAccessAlert show];
     }
+    location = [NSMutableArray array];
+    obj=[JSON getInstance];
+    allStatus = obj.reader.readJSON;
     
-    [self readJSONFile];
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateLocation) userInfo:nil repeats:YES]; //Timer is set for once in 5 seconds. Array elements will be accessed once in every 5 seconds.
 
 }
 
@@ -48,30 +51,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)readJSONFile
-{
-    NSError *error;
-    
-    location = [NSMutableArray array];
-    
-    NSArray *readJSON = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"json"]] options:NSJSONReadingMutableContainers error:&error];
-    
-    for (NSDictionary *dict in readJSON)
-    {
-        if ([[dict valueForKeyPath:@"name"] isEqualToString: @"latitude"] || [[dict valueForKeyPath:@"name"] isEqualToString: @"longitude"])
-        {
-            [location addObject:[dict valueForKeyPath:@"value"]];
-        }
-    }
-    
-    //NSLog(@"Location %@",location);
-    
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateLocation) userInfo:nil repeats:YES]; //Timer is set for once in 5 seconds. Array elements will be accessed once in every 5 seconds.
-}
-
 -(void)updateLocation
 {
 
+    [_mapView removeAnnotations:_mapView.annotations];
+
+    NSNumber *longitude = [NSNumber numberWithDouble:[allStatus[counter] getLongitude]];
+    NSNumber *latitude = [NSNumber numberWithDouble:[allStatus[counter] getLatitude]];
+    [location addObject:latitude];
+    [location addObject:longitude];
+    
     //Zoom to the user location
     MKCoordinateRegion mapRegion;
     mapRegion.center = CLLocationCoordinate2DMake([[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
@@ -82,12 +71,10 @@
     
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = CLLocationCoordinate2DMake([[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
-    point.title = @"Where am I?";
-    point.subtitle = @"I'm here!!!";
+    point.title = [[location objectAtIndex:count] stringValue];
+    point.subtitle = [[location objectAtIndex:count+1] stringValue];
     
-    [annotation addObject:point];
-    
-    [self.mapView addAnnotations:annotation];
+    [self.mapView addAnnotation:point];
     
     NSLog(@"Location %@",[location objectAtIndex:count]);
     
@@ -96,15 +83,8 @@
     NSLog(@"Location %f %f",[[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
     
     count+=2;
-    if([[[location objectAtIndex:count] stringValue] isEqualToString:@"42.291576"]) {
-        self.view.backgroundColor = [UIColor redColor];
-        CFBundleRef mainBundle = CFBundleGetMainBundle();
-        CFURLRef soundFileURLRef;
-        soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"Select", CFSTR ("mp3"),NULL);
-        UInt32 soundID;
-        AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
-        AudioServicesPlaySystemSound(soundID);
-    }
+    counter = counter+1;
+
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -117,19 +97,4 @@
     
     [mapView setRegion:mapRegion animated: YES];
 }
-
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    // 1
-//    CLLocationCoordinate2D zoomLocation;
-//    zoomLocation.latitude = 42.291508;
-//    zoomLocation.longitude= -83.23764;
-//    
-//    // 2
-//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-//    
-//    // 3
-//    //[_mapView setRegion:viewRegion animated:YES];
-//}
-
 @end

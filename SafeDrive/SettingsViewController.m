@@ -9,7 +9,9 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
-
+{
+    AVAudioPlayer *backgroundMusicPlayer;
+}
 @end
 
 int SPEED_LIMIT_SECTION_STATIC_ROWS = 4;
@@ -75,5 +77,10 @@ int NUMBER_OF_SECTIONS = 2;
     }
     [[NSUserDefaults standardUserDefaults] setDouble:userDefinedSpeed forKey:@"UserDefinedSpeed"];
     [self.userDefSpeed resignFirstResponder];
+}
+
+-(IBAction)setVolumeValue:(id)sender
+{
+    [backgroundMusicPlayer setVolume:[_volumeSlider value]/10.0]; // really simple way to change the volume
 }
 @end

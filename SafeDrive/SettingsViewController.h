@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SettingsViewController : UITableViewController
 - (IBAction)isLocationBased:(id)sender;
@@ -16,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *settingsTable;
 @property (strong, nonatomic) IBOutlet UITextField *userDefSpeed;
 - (IBAction)saveUserDefinedSpeed:(id)sender;
-
+@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
+@property (nonatomic, retain)AVAudioPlayer *backgroundMusicPlayer;
 @end
