@@ -79,6 +79,14 @@ int NUMBER_OF_SECTIONS = 2;
     [self.userDefSpeed resignFirstResponder];
 }
 
+- (IBAction)saveThreshold:(id)sender {
+    [self.threshold setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+    double threshold = self.threshold.text.doubleValue;
+    [[NSUserDefaults standardUserDefaults] setDouble:threshold forKey:@"UserDefinedThreshold"];
+    [self.threshold resignFirstResponder];
+
+}
+
 -(IBAction)setVolumeValue:(id)sender
 {
     [backgroundMusicPlayer setVolume:[_volumeSlider value]/10.0]; // really simple way to change the volume

@@ -27,6 +27,7 @@ BOOL alertFlag = false;
 RestAPICall* callAPI;
 SpeedLimit* thisRegion;
 int invalidateTimerCount = 0;
+double threshold = 0.0;
 
 @implementation FirstViewController
 
@@ -38,6 +39,7 @@ int invalidateTimerCount = 0;
 -(void) doIteratively:(NSTimer *)timer {
     counter = counter+1;
     double speedLimit = 0;
+    threshold = [[NSUserDefaults standardUserDefaults] doubleForKey:@"UserDefinedThreshold"];
     if(counter >= invalidateTimerCount - 1) {
         [timer invalidate];
     }
@@ -50,21 +52,21 @@ int invalidateTimerCount = 0;
         NSLog(@"Obtaining from location");
         speedLimit = [thisRegion getSpeedLimit];
     }
-    if([allStatus[counter] getSpeed] > speedLimit) {
+    if([allStatus[counter] getSpeed] > speedLimit + threshold) {
         NSLog(@"Adding Violation");
         ViolationDAO *vio = [[ViolationDAO alloc] init];
         vio.addViolation;
     }
-    [self reflectOnUI:[allStatus[counter] getSpeed]:thisRegion];
+    [self reflectOnUI:[allStatus[counter] getSpeed]:speedLimit];
 }
 
--(void) reflectOnUI: (double) currentSpeed : (SpeedLimit*) thisRegion{
+-(void) reflectOnUI: (double) currentSpeed : (double) speedLimit{
     self.currentSpeed.text = [NSString stringWithFormat:@"%f",currentSpeed];
-    self.speedLimit.text = [NSString stringWithFormat:@"%f", thisRegion.getSpeedLimit];
+    self.speedLimit.text = [NSString stringWithFormat:@"%f", speedLimit];
     CFURLRef soundFileURLRef;
     UInt32 soundID;
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"isAlertEnabled"]) {
-    if(currentSpeed > thisRegion.getSpeedLimit) {
+    if(currentSpeed > speedLimit + threshold) {
         alertFlag = true;
         CFBundleRef mainBundle = CFBundleGetMainBundle();
         soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"alert", CFSTR ("caf"),NULL);
