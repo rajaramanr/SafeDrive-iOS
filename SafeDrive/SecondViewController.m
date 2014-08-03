@@ -17,6 +17,7 @@
     NSMutableArray *annotation;
     JSON *obj;
     NSMutableArray *allStatus;
+    CLGeocoder *geoCoder;
 }
 @end
 
@@ -40,8 +41,9 @@
     location = [NSMutableArray array];
     obj=[JSON getInstance];
     allStatus = obj.reader.readJSON;
+    geoCoder = [[CLGeocoder alloc] init];
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateLocation) userInfo:nil repeats:YES]; //Timer is set for once in 5 seconds. Array elements will be accessed once in every 5 seconds.
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(updateLocation) userInfo:nil repeats:YES]; //Timer is set for once in 5 seconds. Array elements will be accessed once in every 5 seconds.
 
 }
 
@@ -64,37 +66,24 @@
     //Zoom to the user location
     MKCoordinateRegion mapRegion;
     mapRegion.center = CLLocationCoordinate2DMake([[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
-    mapRegion.span.latitudeDelta = 0.2;
-    mapRegion.span.longitudeDelta = 0.2;
+    mapRegion.span.latitudeDelta = 0.1;
+    mapRegion.span.longitudeDelta = 0.1;
     
     [self.mapView setRegion:mapRegion animated: YES];
     
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = CLLocationCoordinate2DMake([[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
-    point.title = [[location objectAtIndex:count] stringValue];
-    point.subtitle = [[location objectAtIndex:count+1] stringValue];
     
-    [self.mapView addAnnotation:point];
-    
-    NSLog(@"Location %@",[location objectAtIndex:count]);
-    
-    NSLog(@"Location %d %d",[location count], count);
-    
-    NSLog(@"Location %f %f",[[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
-    
+    CLLocation *loc = [[CLLocation alloc]initWithLatitude:[allStatus[counter] getLatitude] longitude:[allStatus[counter] getLongitude]];
+    [geoCoder reverseGeocodeLocation: loc completionHandler: ^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *myPlace = [placemarks lastObject];
+    point.title = [NSString stringWithFormat:@"%@,%@,%@",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
+    point.subtitle = [NSString stringWithFormat:@"%.6f, %.6f",[allStatus[counter] getLatitude],[allStatus[counter] getLongitude]];
+        [self.mapView addAnnotation:point];
+    }];
     count+=2;
-    counter = counter+1;
+
 
 }
-//
-//-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-//{
-//    //Zoom to the user location
-//    MKCoordinateRegion mapRegion;
-//    mapRegion.center = mapView.userLocation.coordinate;// get the latitude longitude data and set it here //Make a class that reads the file and it should push 
-//    mapRegion.span.latitudeDelta = 0.2;
-//    mapRegion.span.longitudeDelta = 0.2;
-//    
-//    [mapView setRegion:mapRegion animated: YES];
-//}
+
 @end
