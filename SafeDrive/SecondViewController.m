@@ -76,9 +76,8 @@
     point.coordinate = CLLocationCoordinate2DMake([[location objectAtIndex:count] doubleValue], [[location objectAtIndex:count+1] doubleValue]);
     point.title = [[location objectAtIndex:count] stringValue];
     point.subtitle = [[location objectAtIndex:count+1] stringValue];
-    [annotation addObject:point];
     
-    [self.mapView addAnnotations:annotation];
+    [self.mapView addAnnotation:point];
     
     NSLog(@"Location %@",[location objectAtIndex:count]);
     

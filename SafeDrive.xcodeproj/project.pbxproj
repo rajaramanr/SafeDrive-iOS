@@ -37,7 +37,7 @@
 		0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */; };
 		0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3571980180F005156D2 /* Very-Basic-share-icon.png */; };
 		0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */; };
-		07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B3096A1982A36A007F63CE /* SettingsViewController.m */; };
+		0785E268198DAE7200E12738 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0785E267198DAE7200E12738 /* SettingsViewController.m */; };
 		07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */; };
 		07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */; };
 		07B78B40198839280090B872 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B78B3F198839280090B872 /* FacebookSDK.framework */; };
@@ -103,8 +103,8 @@
 		0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "System-Dashboard-icon-2.png"; sourceTree = "<group>"; };
 		0737C3571980180F005156D2 /* Very-Basic-share-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-share-icon.png"; sourceTree = "<group>"; };
 		0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-info-icon.png"; sourceTree = "<group>"; };
-		07B309691982A355007F63CE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		07B3096A1982A36A007F63CE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		0785E266198DAE7200E12738 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		0785E267198DAE7200E12738 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-down-icon.png"; sourceTree = "<group>"; };
 		07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volume-Controls-Volume-up-icon.png"; sourceTree = "<group>"; };
 		07B78B3F198839280090B872 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -201,10 +201,10 @@
 				07102A60197EC5EC0029FB24 /* Main_iPad.storyboard */,
 				07102A63197EC5EC0029FB24 /* FirstViewController.h */,
 				07102A64197EC5EC0029FB24 /* FirstViewController.m */,
+				0785E266198DAE7200E12738 /* SettingsViewController.h */,
+				0785E267198DAE7200E12738 /* SettingsViewController.m */,
 				07273D3B198457DA00A56A2A /* HistoryViewController.h */,
 				07273D3C198457EB00A56A2A /* HistoryViewController.m */,
-				07B309691982A355007F63CE /* SettingsViewController.h */,
-				07B3096A1982A36A007F63CE /* SettingsViewController.m */,
 				07102A66197EC5EC0029FB24 /* SecondViewController.h */,
 				07102A67197EC5EC0029FB24 /* SecondViewController.m */,
 				07B78B4119883D740090B872 /* ShareViewController.h */,
@@ -413,7 +413,6 @@
 				07D14ABA198D47BF0025E3BD /* JSON.m in Sources */,
 				07102A68197EC5EC0029FB24 /* SecondViewController.m in Sources */,
 				07102A5C197EC5EC0029FB24 /* AppDelegate.m in Sources */,
-				07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */,
 				07102A65197EC5EC0029FB24 /* FirstViewController.m in Sources */,
 				07D14ABE198D47ED0025E3BD /* PresentStatus.m in Sources */,
 				AFEE26AF19899F8600576965 /* AccidentRegion.m in Sources */,
@@ -424,6 +423,7 @@
 				AFEE26B21989A01D00576965 /* AccidentRegionDAO.m in Sources */,
 				07102A58197EC5EC0029FB24 /* main.m in Sources */,
 				07273D3D198457EB00A56A2A /* HistoryViewController.m in Sources */,
+				0785E268198DAE7200E12738 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
