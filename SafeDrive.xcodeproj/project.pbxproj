@@ -37,8 +37,11 @@
 		0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */; };
 		0737C35D1980180F005156D2 /* Very-Basic-share-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3571980180F005156D2 /* Very-Basic-share-icon.png */; };
 		0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */; };
+		07996700198EA4E50043C1F9 /* alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 079966FF198EA4E50043C1F9 /* alert.caf */; };
+		07996702198EA5800043C1F9 /* connect-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07996701198EA5800043C1F9 /* connect-icon.png */; };
+		07996705198EAFC00043C1F9 /* bluecar.png in Resources */ = {isa = PBXBuildFile; fileRef = 07996703198EAFC00043C1F9 /* bluecar.png */; };
+		07996706198EAFC00043C1F9 /* blackcar.png in Resources */ = {isa = PBXBuildFile; fileRef = 07996704198EAFC00043C1F9 /* blackcar.png */; };
 		0799F206198DD7C60017ED82 /* JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0799F205198DD7C60017ED82 /* JSON.m */; };
-		0799F208198DDD890017ED82 /* alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0799F207198DDD890017ED82 /* alert.caf */; };
 		0799F20A198DF2520017ED82 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0799F209198DF2520017ED82 /* AVFoundation.framework */; };
 		07B3096B1982A36A007F63CE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B3096A1982A36A007F63CE /* SettingsViewController.m */; };
 		07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */; };
@@ -109,9 +112,12 @@
 		0737C3561980180F005156D2 /* System-Dashboard-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "System-Dashboard-icon-2.png"; sourceTree = "<group>"; };
 		0737C3571980180F005156D2 /* Very-Basic-share-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-share-icon.png"; sourceTree = "<group>"; };
 		0737C35F198018FB005156D2 /* Very-Basic-info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-info-icon.png"; sourceTree = "<group>"; };
+		079966FF198EA4E50043C1F9 /* alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alert.caf; sourceTree = "<group>"; };
+		07996701198EA5800043C1F9 /* connect-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect-icon.png"; sourceTree = "<group>"; };
+		07996703198EAFC00043C1F9 /* bluecar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluecar.png; sourceTree = "<group>"; };
+		07996704198EAFC00043C1F9 /* blackcar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackcar.png; sourceTree = "<group>"; };
 		0799F204198DD7C60017ED82 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		0799F205198DD7C60017ED82 /* JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSON.m; sourceTree = "<group>"; };
-		0799F207198DDD890017ED82 /* alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alert.caf; sourceTree = "<group>"; };
 		0799F209198DF2520017ED82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		07B309691982A355007F63CE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		07B3096A1982A36A007F63CE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -236,7 +242,7 @@
 		07102A52197EC5EC0029FB24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0799F207198DDD890017ED82 /* alert.caf */,
+				079966FF198EA4E50043C1F9 /* alert.caf */,
 				AF3BD37E198AEC91000D35E6 /* DrivingCleaned.json */,
 				AFD756FF198D7D55006452BF /* changedLtLg.json */,
 				072256D019831F7B00A60015 /* driving.json */,
@@ -272,6 +278,9 @@
 		0737C35E1980181D005156D2 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				07996703198EAFC00043C1F9 /* bluecar.png */,
+				07996704198EAFC00043C1F9 /* blackcar.png */,
+				07996701198EA5800043C1F9 /* connect-icon.png */,
 				072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */,
 				07B6B28E1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png */,
 				07B6B2901984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png */,
@@ -415,8 +424,11 @@
 				072256CF19831B3000A60015 /* PleaseWork.json in Resources */,
 				0737C35B1980180F005156D2 /* share.png in Resources */,
 				AFEE26B71989A1F100576965 /* AccidentDB.sqlite in Resources */,
+				07996705198EAFC00043C1F9 /* bluecar.png in Resources */,
 				07B6B2911984A5AF00B17309 /* Volume-Controls-Volume-up-icon.png in Resources */,
-				0799F208198DDD890017ED82 /* alert.caf in Resources */,
+				07996702198EA5800043C1F9 /* connect-icon.png in Resources */,
+				07996706198EAFC00043C1F9 /* blackcar.png in Resources */,
+				07996700198EA4E50043C1F9 /* alert.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

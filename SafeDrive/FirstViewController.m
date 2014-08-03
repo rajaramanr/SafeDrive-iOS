@@ -99,7 +99,7 @@ double threshold = 0.0;
 
 - (IBAction)readJson:(id)sender {
     //Reading JSON
-    
+    [sender setTintColor:[UIColor blueColor]];
     obj=[JSON getInstance];
     allStatus = obj.reader.readJSON;
     invalidateTimerCount = [allStatus count];
