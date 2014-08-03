@@ -19,6 +19,4 @@
 - (IBAction)saveUserDefinedSpeed:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *threshold;
 - (IBAction)saveThreshold:(id)sender;
-@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
-@property (nonatomic, retain)AVAudioPlayer *backgroundMusicPlayer;
 @end

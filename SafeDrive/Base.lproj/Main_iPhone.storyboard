@@ -427,20 +427,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wfs-x0-sue">
-                                        <rect key="frame" x="0.0" y="328" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wfs-x0-sue" id="W2B-qp-BiK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" minimumValueImage="Volume-Controls-Volume-down-icon.png" maximumValueImage="Volume-Controls-Volume-up-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="XGu-Ny-hqf">
-                                                    <rect key="frame" x="18" y="7" width="284" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </slider>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -456,7 +442,6 @@
                         <outlet property="settingsTable" destination="Pch-eT-xXs" id="tFQ-UQ-NRu"/>
                         <outlet property="threshold" destination="jSB-fX-8eX" id="wrV-q3-fc3"/>
                         <outlet property="userDefSpeed" destination="nSz-4m-xje" id="y5h-ys-KVS"/>
-                        <outlet property="volumeSlider" destination="XGu-Ny-hqf" id="0Nk-CD-JBg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juQ-0Z-tPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,42 +504,12 @@
             </objects>
             <point key="canvasLocation" x="346" y="687"/>
         </scene>
-        <!--Settings View Controller - Settings-->
-        <scene sceneID="Wfm-eC-5se">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wcl-pD-L5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="xS0-QQ-Hn3" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7fv-ZT-caM"/>
-                        <viewControllerLayoutGuide type="bottom" id="jSx-yQ-lef"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uy4-fI-VZk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hlr-tv-YN3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Safe Drive" id="Mkk-O3-i5V"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-icon-2.png" id="RJP-Zp-Exl"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="829" y="727"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Maps-Location-icon.png" width="32" height="32"/>
         <image name="System-Dashboard-icon-2.png" width="32" height="32"/>
         <image name="Very-Basic-info-icon-2.png" width="32" height="32"/>
         <image name="Very-Basic-share-icon.png" width="32" height="32"/>
-        <image name="Volume-Controls-Volume-down-icon.png" width="32" height="32"/>
-        <image name="Volume-Controls-Volume-up-icon.png" width="32" height="32"/>
         <image name="blackcar.png" width="32" height="32"/>
         <image name="settings-icon-2.png" width="32" height="32"/>
     </resources>

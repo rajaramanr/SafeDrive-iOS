@@ -86,15 +86,15 @@
     counter = counter+1;
 
 }
-
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    //Zoom to the user location
-    MKCoordinateRegion mapRegion;
-    mapRegion.center = mapView.userLocation.coordinate;// get the latitude longitude data and set it here //Make a class that reads the file and it should push 
-    mapRegion.span.latitudeDelta = 0.2;
-    mapRegion.span.longitudeDelta = 0.2;
-    
-    [mapView setRegion:mapRegion animated: YES];
-}
+//
+//-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+//{
+//    //Zoom to the user location
+//    MKCoordinateRegion mapRegion;
+//    mapRegion.center = mapView.userLocation.coordinate;// get the latitude longitude data and set it here //Make a class that reads the file and it should push 
+//    mapRegion.span.latitudeDelta = 0.2;
+//    mapRegion.span.longitudeDelta = 0.2;
+//    
+//    [mapView setRegion:mapRegion animated: YES];
+//}
 @end

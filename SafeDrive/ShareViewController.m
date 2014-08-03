@@ -8,8 +8,14 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import "ShareViewController.h"
+#import "JSON.h"
+#import "PresentStatus.h"
 
-@interface ShareViewController ()
+@interface ShareViewController (){
+    NSMutableArray *allStatus;
+    JSON *obj;
+    CLGeocoder *geoCoder;
+}
 @property (strong, nonatomic) IBOutlet UIButton *UpdateStatusButton;
 
 @property (strong, nonatomic) IBOutlet UIButton *UpdateTrafficButton;
@@ -27,7 +33,9 @@
     // Align the button in the center horizontally
     loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.center.y - (loginView.frame.size.height / 2)));
     [self.view addSubview:loginView];
-    
+    obj=[JSON getInstance];
+    allStatus = obj.reader.readJSON;
+    geoCoder = [[CLGeocoder alloc] init];
     loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email", @"user_friends",@"publish_actions"]];
     
     [FBDialogs presentShareDialogWithLink:nil
@@ -110,12 +118,20 @@
 }
 
 - (IBAction)UpdateTrafficStatus:(id)sender {
-    self.message = @"Lots of traffic ahead on so and so road - beware!";
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:[allStatus[counter] getLatitude] longitude:[allStatus[counter] getLongitude]];
+    [geoCoder reverseGeocodeLocation: location completionHandler: ^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *myPlace = [placemarks lastObject];
+        self.message = [NSString stringWithFormat:@"Avoid %@,%@,%@ - there's a lot of traffic here!",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
+    }];
     [self StatusUpdateWithAPICalls];
 }
 
 - (IBAction)UpdateRoadBlockedStatus:(id)sender{
-    self.message = @"Guys stay away from so and so road -its blocked!!";
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:[allStatus[counter] getLatitude] longitude:[allStatus[counter] getLongitude]];
+    [geoCoder reverseGeocodeLocation: location completionHandler: ^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *myPlace = [placemarks lastObject];
+    self.message = [NSString stringWithFormat:@"Guys stay away from %@,%@,%@-its blocked!!",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
+        }];
     [self StatusUpdateWithAPICalls];
 }
 
