@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsViewController : UITableViewController
-- (IBAction)LocationBased:(id)sender;
-@property (weak, nonatomic) IBOutlet UISwitch *AlertStatus;
-@property (copy,nonatomic) NSArray *dates;
+- (IBAction)isLocationBased:(id)sender;
+- (IBAction)isAlertEnabled:(id)sender;
+@property (strong, nonatomic) IBOutlet UISwitch *locationStatus;
+@property (strong, nonatomic) IBOutlet UISwitch *alertStatus;
+@property (strong, nonatomic) IBOutlet UITableView *settingsTable;
+@property (strong, nonatomic) IBOutlet UITextField *userDefSpeed;
+- (IBAction)saveUserDefinedSpeed:(id)sender;
+
 @end

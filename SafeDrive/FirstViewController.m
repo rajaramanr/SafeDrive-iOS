@@ -53,16 +53,24 @@ int invalidateTimerCount = 0;
 
 -(void) doIteratively:(NSTimer *)timer {
     currentIndex++;
-    NSLog(@"Current counter = %d size = %d", currentIndex, invalidateTimerCount);
+    double speedLimit = 0;
     if(currentIndex >= invalidateTimerCount - 1) {
         [timer invalidate];
     }
     thisRegion = [callAPI callAPI:[allStatus[currentIndex] getLatitude] : [allStatus[currentIndex] getLongitude]];
-    if([allStatus[currentIndex] getSpeed] > [thisRegion getSpeedLimit]) {
-        NSLog(@"Adding Violation");
-        ViolationDAO *vio = [[ViolationDAO alloc] init];
-        vio.addViolation;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLocationBased"] == NO ){
+        NSLog(@"Only user defined speed limit");
+        speedLimit = [[NSUserDefaults standardUserDefaults] doubleForKey:@"UserDefinedSpeed"];
+        NSLog(@"%f", speedLimit);
+    } else {
+        NSLog(@"Obtaining from location");
+        speedLimit = [thisRegion getSpeedLimit];
     }
+//    if([allStatus[currentIndex] getSpeed] > speedLimit) {
+//        NSLog(@"Adding Violation");
+//        ViolationDAO *vio = [[ViolationDAO alloc] init];
+//        vio.addViolation;
+//    }
     [self reflectOnUI:[allStatus[currentIndex] getSpeed]:thisRegion];
 }
 

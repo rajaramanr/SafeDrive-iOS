@@ -49,7 +49,6 @@
                 limit.state = [group valueForKeyPath:str];
         }
     }
-    NSLog(@"%@", limit);
     return limit;
 }
 @end
