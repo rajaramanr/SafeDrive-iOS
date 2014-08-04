@@ -19,17 +19,20 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-FF-bNg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Safe Drive" id="OnD-9b-Dyu">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="blackcar.png" id="maa-zt-zoG">
-                                            <inset key="imageInsets" minX="-4" minY="11" maxX="-9" maxY="-6"/>
+                                            <inset key="imageInsets" minX="-4" minY="4" maxX="-9" maxY="-6"/>
                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="readJson:" destination="CZ4-MO-1fc" id="HlB-LE-lAe"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="Very-Basic-info-icon-2.png" id="VeA-6U-seJ">
-                                            <inset key="imageInsets" minX="-34" minY="2" maxX="-17" maxY="0.0"/>
+                                            <inset key="imageInsets" minX="-34" minY="6" maxX="2" maxY="-4"/>
                                             <connections>
                                                 <segue destination="JSd-EZ-u67" kind="modal" id="5nr-7p-7HT"/>
                                             </connections>
@@ -62,14 +65,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MPH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hut-3z-CCE">
+                                <rect key="frame" x="254" y="186" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MPH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hm-A1-usj">
+                                <rect key="frame" x="254" y="290" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="faV-9N-lS4" appends="YES" id="lFZ-q1-wzh"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" image="System-Dashboard-icon-2.png" id="u1e-5L-l1D"/>
                     <connections>
+                        <outlet property="curSpeedUnit" destination="Hut-3z-CCE" id="a9Q-bV-4cH"/>
                         <outlet property="currentSpeed" destination="nKL-Vl-bDD" id="Qe2-Fg-rCR"/>
                         <outlet property="searchDisplayController" destination="svY-eh-VFY" id="mRF-jX-s5v"/>
+                        <outlet property="speedLimUnit" destination="2Hm-A1-usj" id="RmJ-SC-cNn"/>
                         <outlet property="speedLimit" destination="N7y-Oy-Slb" id="I1r-sc-ASn"/>
+                        <outlet property="swipeLeft" destination="faV-9N-lS4" id="PHW-E5-ZOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -81,6 +104,7 @@
                         <outlet property="searchResultsDelegate" destination="CZ4-MO-1fc" id="5aq-GY-GsV"/>
                     </connections>
                 </searchDisplayController>
+                <swipeGestureRecognizer direction="right" id="faV-9N-lS4"/>
             </objects>
             <point key="canvasLocation" x="360" y="-660"/>
         </scene>
@@ -88,7 +112,7 @@
         <scene sceneID="aRJ-gJ-cB6">
             <objects>
                 <tableViewController id="EkS-fG-cWj" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fq6-XK-uCy">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="25" sectionFooterHeight="28" id="fq6-XK-uCy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,18 +120,25 @@
                             <tableViewSection headerTitle="Description" id="qhH-2P-wGS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="97" id="b5P-wS-tLT">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="97"/>
+                                        <rect key="frame" x="0.0" y="89" width="320" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b5P-wS-tLT" id="fR5-kk-Ctt">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtq-TK-LfA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtq-TK-LfA">
+                                                    <rect key="frame" x="0.0" y="-5" width="320" height="117"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">SafeDrive alerts you when your car crosses the speed limit of a certain road and when your car is navigating in an accident prone zone. You can view your current location on the map and post status of a location on Facebook</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -118,18 +149,91 @@
                             <tableViewSection headerTitle="Settings" id="hqt-Ko-R1k">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="359" id="rQu-Yt-2gc">
-                                        <rect key="frame" x="0.0" y="205" width="320" height="359"/>
+                                        <rect key="frame" x="0.0" y="211" width="320" height="359"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rQu-Yt-2gc" id="mol-ck-gmH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="358"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-ZO-iyH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="358"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-ZO-iyH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="351"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Dashboard">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headerLevel="1"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content"> :
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" headerLevel="1"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">Click on the car icon to connect to your car
+View the current speed and speed limit here. If you cross the speed limit the alarm will ring. If you are navigating in an accident prone zone the screen would turn red.
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Location">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">:
+It gives you the current location
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">History: 
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">It shows you the list of violations made
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">Settings:
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">Speed Limit:You can set your threshold speed limit between 1-10
+Enable LocationBased to get speed limit automatically or disable to set the speed limit manually.
+You can set the units of your speed and speed limits.
+Alert Configuration: Enable to receive alert.
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -217,14 +321,23 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mKf-WN-L8s" appends="YES" id="xOe-8W-cEE"/>
+                            <outletCollection property="gestureRecognizers" destination="wqY-iM-gMS" appends="YES" id="0iv-VV-vWz"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" image="Very-Basic-share-icon.png" id="fme-56-Dqu"/>
                     <connections>
                         <outlet property="UpdateStatusButton" destination="HYQ-EC-krm" id="wAO-IP-3td"/>
                         <outlet property="UpdateTrafficButton" destination="vro-64-j0V" id="V5q-ub-Xct"/>
+                        <outlet property="swipeLeft" destination="mKf-WN-L8s" id="yus-Hb-4u5"/>
+                        <outlet property="swipeRight" destination="wqY-iM-gMS" id="tMp-dn-3EL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sp-hI-qfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="mKf-WN-L8s"/>
+                <swipeGestureRecognizer direction="right" id="wqY-iM-gMS"/>
             </objects>
             <point key="canvasLocation" x="843" y="34"/>
         </scene>
@@ -250,6 +363,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-sr-YA3">
                                 <rect key="frame" x="0.0" y="47" width="320" height="474"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -352,11 +466,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xaO-65-XLu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xaO-65-XLu">
                                         <rect key="frame" x="0.0" y="174" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xaO-65-XLu" id="6NJ-6Z-Tzs">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tQ-tD-Bpg">
@@ -365,6 +479,17 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L3d-ya-jFd">
+                                                    <rect key="frame" x="201" y="7" width="107" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="MPH"/>
+                                                        <segment title="KMPH"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="segmentedControlAction:" destination="IJJ-Xu-e9l" eventType="valueChanged" id="C26-Yh-Ruj"/>
+                                                    </connections>
+                                                </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -439,6 +564,7 @@
                     <connections>
                         <outlet property="alertStatus" destination="puA-QJ-RHl" id="i2r-gn-oL8"/>
                         <outlet property="locationStatus" destination="gMt-tK-hig" id="k4I-DV-mlL"/>
+                        <outlet property="segmentedControl" destination="L3d-ya-jFd" id="shd-Jo-IQf"/>
                         <outlet property="settingsTable" destination="Pch-eT-xXs" id="tFQ-UQ-NRu"/>
                         <outlet property="threshold" destination="jSB-fX-8eX" id="wrV-q3-fc3"/>
                         <outlet property="userDefSpeed" destination="nSz-4m-xje" id="y5h-ys-KVS"/>
@@ -494,13 +620,22 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="w1f-zm-qPw" appends="YES" id="6ZJ-Y9-CPy"/>
+                            <outletCollection property="gestureRecognizers" destination="wWR-fv-fX9" appends="YES" id="QnP-7e-zGZ"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="em4-QN-GUy"/>
                     <connections>
                         <outlet property="Table" destination="mZR-D4-DZO" id="juE-Y8-uUC"/>
+                        <outlet property="swipeLeft" destination="w1f-zm-qPw" id="R0H-cb-jkT"/>
+                        <outlet property="swipeRight" destination="wWR-fv-fX9" id="iT4-m6-8R6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZW-lA-ekz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="w1f-zm-qPw"/>
+                <swipeGestureRecognizer direction="right" id="wWR-fv-fX9"/>
             </objects>
             <point key="canvasLocation" x="346" y="687"/>
         </scene>

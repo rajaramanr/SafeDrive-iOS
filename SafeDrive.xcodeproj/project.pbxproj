@@ -23,8 +23,11 @@
 		07102A73197EC5EC0029FB24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07102A4F197EC5EC0029FB24 /* UIKit.framework */; };
 		07102A7B197EC5EC0029FB24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07102A79197EC5EC0029FB24 /* InfoPlist.strings */; };
 		07102A7D197EC5EC0029FB24 /* SafeDriveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07102A7C197EC5EC0029FB24 /* SafeDriveTests.m */; };
+		07188A64198F1CE6003B38A0 /* AccidentDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 07188A63198F1CE6003B38A0 /* AccidentDB.sqlite */; };
 		072045ED1985552800BD3A4F /* Very-Basic-info-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */; };
 		072256D31983242800A60015 /* zipcode.csv in Resources */ = {isa = PBXBuildFile; fileRef = 072256D21983242800A60015 /* zipcode.csv */; };
+		07259D5C198FF66100AFF030 /* steering-wheel-128.icns in Resources */ = {isa = PBXBuildFile; fileRef = 07259D5B198FF66100AFF030 /* steering-wheel-128.icns */; };
+		07259D60198FF85000AFF030 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07259D5F198FF85000AFF030 /* icon.png */; };
 		07273D3D198457EB00A56A2A /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07273D3C198457EB00A56A2A /* HistoryViewController.m */; };
 		0734A9D819816804006A5C5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0734A9D719816804006A5C5F /* MapKit.framework */; };
 		0737C3581980180F005156D2 /* Maps-Location-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0737C3521980180F005156D2 /* Maps-Location-icon.png */; };
@@ -89,8 +92,11 @@
 		07102A78197EC5EC0029FB24 /* SafeDriveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SafeDriveTests-Info.plist"; sourceTree = "<group>"; };
 		07102A7A197EC5EC0029FB24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07102A7C197EC5EC0029FB24 /* SafeDriveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeDriveTests.m; sourceTree = "<group>"; };
+		07188A63198F1CE6003B38A0 /* AccidentDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AccidentDB.sqlite; sourceTree = "<group>"; };
 		072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Very-Basic-info-icon-2.png"; sourceTree = "<group>"; };
 		072256D21983242800A60015 /* zipcode.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zipcode.csv; sourceTree = "<group>"; };
+		07259D5B198FF66100AFF030 /* steering-wheel-128.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "steering-wheel-128.icns"; sourceTree = "<group>"; };
+		07259D5F198FF85000AFF030 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		07273D3B198457DA00A56A2A /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		07273D3C198457EB00A56A2A /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		0734A9D719816804006A5C5F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -117,7 +123,6 @@
 		07D5116D198ADC6800C56828 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AF3BD380198AF0EF000D35E6 /* PresentStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentStatus.h; sourceTree = "<group>"; };
 		AF3BD381198AF0EF000D35E6 /* PresentStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentStatus.m; sourceTree = "<group>"; };
-		AFA5854C198EA47200D03612 /* AccidentDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AccidentDB.sqlite; sourceTree = "<group>"; };
 		AFD756F9198D76F3006452BF /* SpeedLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedLimit.h; sourceTree = "<group>"; };
 		AFD756FA198D76F3006452BF /* SpeedLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedLimit.m; sourceTree = "<group>"; };
 		AFD756FC198D795A006452BF /* RestAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPICall.h; sourceTree = "<group>"; };
@@ -260,6 +265,8 @@
 		0737C35E1980181D005156D2 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				07259D5F198FF85000AFF030 /* icon.png */,
+				07259D5B198FF66100AFF030 /* steering-wheel-128.icns */,
 				07996704198EAFC00043C1F9 /* blackcar.png */,
 				07996701198EA5800043C1F9 /* connect-icon.png */,
 				072045EC1985552800BD3A4F /* Very-Basic-info-icon-2.png */,
@@ -303,7 +310,7 @@
 		AFEE26B51989A1D400576965 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				AFA5854C198EA47200D03612 /* AccidentDB.sqlite */,
+				07188A63198F1CE6003B38A0 /* AccidentDB.sqlite */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -389,9 +396,12 @@
 				072256D31983242800A60015 /* zipcode.csv in Resources */,
 				0737C35C1980180F005156D2 /* System-Dashboard-icon-2.png in Resources */,
 				0737C35A1980180F005156D2 /* settings-icon-2.png in Resources */,
+				07259D5C198FF66100AFF030 /* steering-wheel-128.icns in Resources */,
+				07259D60198FF85000AFF030 /* icon.png in Resources */,
 				072045ED1985552800BD3A4F /* Very-Basic-info-icon-2.png in Resources */,
 				0737C360198018FB005156D2 /* Very-Basic-info-icon.png in Resources */,
 				07102A6A197EC5EC0029FB24 /* Images.xcassets in Resources */,
+				07188A64198F1CE6003B38A0 /* AccidentDB.sqlite in Resources */,
 				07B6B28F1984A5A500B17309 /* Volume-Controls-Volume-down-icon.png in Resources */,
 				07102A5F197EC5EC0029FB24 /* Main_iPhone.storyboard in Resources */,
 				07996724198EFB750043C1F9 /* Final.json in Resources */,

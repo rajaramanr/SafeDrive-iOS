@@ -17,11 +17,11 @@ int ALERT_SECTION_STATIC_ROWS = 1;
 int NUMBER_OF_SECTIONS = 2;
 
 @implementation SettingsViewController
+@synthesize segmentedControl;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,4 +84,16 @@ int NUMBER_OF_SECTIONS = 2;
     [self.threshold resignFirstResponder];
 
 }
+
+- (IBAction) segmentedControlAction:(id)sender {
+    if(segmentedControl.selectedSegmentIndex == 0)
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:@"MPH" forKey:@"Units"];
+    }
+    if(segmentedControl.selectedSegmentIndex == 1)
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:@"KMPH" forKey:@"Units"];
+    }
+}
+
 @end

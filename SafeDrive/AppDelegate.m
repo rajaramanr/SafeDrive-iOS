@@ -17,7 +17,25 @@
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLocationBased"];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAlertEnabled"];
     [[NSUserDefaults standardUserDefaults] setDouble:30 forKey:@"UserDefinedSpeed"];
+    [[NSUserDefaults standardUserDefaults] setValue:@"MPH" forKey:@"Units"];
+
     return YES;
+    
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString* dbPath = [docPath stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    // Check if the database is existed.
+    if(![fm fileExistsAtPath:dbPath])
+    {
+        // If database is not existed, copy from the database template in the bundle
+        NSString* dbTemplatePath = [[NSBundle mainBundle] pathForResource:@"AccidentDB" ofType:@"sqlite"];
+        NSError* error = nil;
+        [fm copyItemAtPath:dbTemplatePath toPath:dbPath error:&error];
+        if(error){
+            NSLog(@"can't copy db.");
+        }
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

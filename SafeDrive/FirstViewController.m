@@ -34,11 +34,30 @@ double threshold = 0.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeftGest)];
+    [_swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:_swipeLeft];
+    
 }
 
+-(void) swipeLeftGest {
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+    
+    [self.tabBarController setSelectedIndex:selectedIndex + 1];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    self.view.frame = [[UIScreen mainScreen] applicationFrame];
+}
 -(void) doIteratively:(NSTimer *)timer {
     counter = counter+1;
     double speedLimit = 0;
+    double curSpeed = [allStatus[counter] getSpeed];
+    _curSpeedUnit.text = @"MPH";
+    _speedLimUnit.text = @"MPH";
+    
+    NSString *units = [[NSUserDefaults standardUserDefaults] stringForKey:@"Units"];
     threshold = [[NSUserDefaults standardUserDefaults] doubleForKey:@"UserDefinedThreshold"];
     if(counter >= invalidateTimerCount - 1) {
         [timer invalidate];
@@ -48,24 +67,49 @@ double threshold = 0.0;
         speedLimit = [[NSUserDefaults standardUserDefaults] doubleForKey:@"UserDefinedSpeed"];
     } else {
         speedLimit = [thisRegion getSpeedLimit];
-        
-        // Do check for KMpH or MPH
-        
-        
-        // Converting the m/s speed to miles/hr
-        speedLimit = speedLimit * 2.33;
         if(speedLimit == 0 || speedLimit > 200) {
-            // National speed limit
-            speedLimit = 60;
+            speedLimit = 25.75;
+        }
+        //        // Do check for KMpH or MPH
+        //        if([units isEqualToString:@"MPH"]) {
+        //        // Converting the m/s speed to miles/hr
+        //        speedLimit = speedLimit * 2.33;
+        //        }
+        //        else {
+        //            // Converting the m/s speed to miles/hr
+        //            speedLimit = speedLimit * 3.6;
+        //            _curSpeedUnit.text = @"KMPH";
+        //            _speedLimUnit.text = @"KMPH";
+        //            curSpeed = curSpeed*1.60934;
+        //        }
+    }
+    // Do check for KMpH or MPH
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"isLocationBased"] == YES) {
+        if([units isEqualToString:@"MPH"]) {
+            // Converting the m/s speed to miles/hr
+            speedLimit = speedLimit * 2.33;
+        }
+        else {
+            // Converting the m/s speed to miles/hr
+            speedLimit = speedLimit * 3.6;
+            _curSpeedUnit.text = @"KMPH";
+            _speedLimUnit.text = @"KMPH";
+            curSpeed = curSpeed*1.60934;
+        }
+    } else {
+        if([units isEqualToString:@"KMPH"]) {
+            _curSpeedUnit.text = @"KMPH";
+            _speedLimUnit.text = @"KMPH";
         }
     }
-    if([allStatus[counter] getSpeed] > speedLimit + threshold) {
+    
+    if( curSpeed > speedLimit + threshold) {
         NSLog(@"Adding Violation");
         ViolationDAO *vio = [[ViolationDAO alloc] init];
         vio.addViolation;
     }
     [self checkThisCounty:thisRegion];
-    [self reflectOnUI:[allStatus[counter] getSpeed]:speedLimit];
+    [self reflectOnUI:curSpeed:speedLimit];
 }
 
 -(void) reflectOnUI: (double) currentSpeed : (double) speedLimit{
@@ -98,7 +142,7 @@ double threshold = 0.0;
     AccidentRegionDAO *regions = [[AccidentRegionDAO alloc] init];
     BOOL isAccidentProne = [regions getAccidents: [[thisRegion getCounty] uppercaseString] of:[thisRegion getState] region:[[thisRegion getStreet] uppercaseString]];
     if(isAccidentProne) {
-        self.view.backgroundColor = [UIColor redColor];
+        self.view.backgroundColor = [UIColor colorWithRed:(220.0/255.0) green:(70.0/255.0)blue:(70.0/255.0) alpha:1.0];
     } else {
         self.view.backgroundColor = [UIColor whiteColor];
     }
@@ -119,4 +163,5 @@ double threshold = 0.0;
                                    userInfo:nil
                                     repeats:YES];
 }
+
 @end

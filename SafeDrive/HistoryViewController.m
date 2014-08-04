@@ -20,8 +20,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeftGest)];
+    [_swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:_swipeLeft];
+    
+    self.swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRightGest)];
+    [_swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:_swipeRight];
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    self.view.frame = [[UIScreen mainScreen] applicationFrame];
+}
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -41,6 +52,17 @@
     NSLog(@"Done fetching records");
 }
 
+-(void) swipeRightGest {
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+    
+    [self.tabBarController setSelectedIndex:selectedIndex - 1];
+}
+
+-(void) swipeLeftGest {
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+    
+    [self.tabBarController setSelectedIndex:selectedIndex + 1];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

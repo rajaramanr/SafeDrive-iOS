@@ -10,4 +10,6 @@
 
 @interface ShareViewController : UIViewController
 @property (copy,nonatomic) NSString *message;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeft;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeRight;
 @end

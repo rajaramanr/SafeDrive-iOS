@@ -19,4 +19,5 @@
 - (IBAction)saveUserDefinedSpeed:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *threshold;
 - (IBAction)saveThreshold:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @end

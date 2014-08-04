@@ -17,7 +17,10 @@
     NSMutableArray *violations = [[NSMutableArray alloc] init];
     @try {
         NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+//        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString* dbPath = [docPath stringByAppendingPathComponent:@"test.sqlite"];
+        
         BOOL success = [fileMgr fileExistsAtPath:dbPath];
         if(!success) {
             NSLog(@"Cannot locate database at '%@'", dbPath);
@@ -49,7 +52,9 @@
 
 - (void)addViolation {
     NSFileManager *fileMgr = [NSFileManager defaultManager];
-    NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+//    NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString* dbPath = [docPath stringByAppendingPathComponent:@"test.sqlite"];
     NSLog(@"DB located");
     BOOL success = [fileMgr fileExistsAtPath:dbPath];
     if (success)
@@ -58,7 +63,7 @@
         if (sqlite3_open(dbpath, &db) == SQLITE_OK)
         {
             const char *sql =
-            "CREATE TABLE IF NOT EXISTS history (id INTEGER PRIMARY KEY AUTOINCREMENT, date DATE, count Text)";
+            "CREATE TABLE history (id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, count TEXT)";
             sqlite3_stmt *sqlStmt;
             sqlite3_prepare(db, sql, -1, &sqlStmt, NULL);
             if (sqlite3_step(sqlStmt) != SQLITE_OK)
@@ -71,14 +76,28 @@
             [formatter setTimeZone:[NSTimeZone localTimeZone]];
             [formatter setDateFormat:@"yyyy/MM/dd"];
             NSString *dateString = [formatter stringFromDate:date];
-            
-            
             NSInteger count = [self checkForRecord: dateString];
             
             
+//            count = count + 1;
+//            
+//            if (count == 0) {
+//                sql = "INSERT INTO history (count, date) VALUES (?, ?)";
+//            } else {
+//                sql = "UPDATE history SET count = ? where date=?";
+//            }
+//            
+//            if(sqlite3_prepare(db, sql, -1, &sqlStmt, NULL) != SQLITE_OK) {
+//                NSLog(@"Problem with prepare statement");
+//            } else {
+//                NSLog(@"Setting parameters");
+//                sqlite3_bind_text(sqlStmt, 1, [[NSString stringWithFormat:@"%d", count] UTF8String], -1, SQLITE_TRANSIENT);
+//                sqlite3_bind_text(sqlStmt, 2, [[NSString stringWithFormat:@"%@", dateString] UTF8String], -1, SQLITE_TRANSIENT);
+//            }
+            
             NSString *insertSQL;
-            NSLog([NSString stringWithFormat:@"%d", count]);
             if (count == 0) {
+                NSLog(@"Coming to insert");
                 insertSQL = [NSString stringWithFormat:
                                    @"INSERT INTO history (date, count) VALUES (\"%@\", \"%d\")",
                                    dateString , 1];
@@ -86,12 +105,13 @@
                 NSLog(@"Updating");
                 count = count + 1;
                 insertSQL = [NSString stringWithFormat:
-                                       @"update history set count = \"%d\" where date=\"%@\"",
+                                       @"UPDATE history SET count = \"%d\" where date=\"%@\"",
                                         count, dateString];
             }
             const char *insert_stmt = [insertSQL UTF8String];
             sqlite3_prepare_v2(db, insert_stmt,
                                -1, &sqlStmt, NULL);
+            
             if (sqlite3_step(sqlStmt) == SQLITE_DONE)
             {
                 NSLog(@"Added Successfully");
@@ -111,7 +131,10 @@
     NSInteger count = 0;
     @try {
         NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+//        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"AccidentDB.sqlite"];
+        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString* dbPath = [docPath stringByAppendingPathComponent:@"test.sqlite"];
+        
         BOOL success = [fileMgr fileExistsAtPath:dbPath];
         if(!success) {
             NSLog(@"Cannot locate database at '%@'", dbPath);
@@ -125,7 +148,7 @@
         if(sqlite3_prepare(db, sql, -1, &sqlStmt, NULL) != SQLITE_OK) {
             NSLog(@"Problem with prepare statement");
         } else {
-            NSLog(@"COming to prepare our thala");
+            NSLog(@"Setting parameters");
             sqlite3_bind_text(sqlStmt, 1, [dateString UTF8String], -1, SQLITE_TRANSIENT);
         }
         while(sqlite3_step(sqlStmt) == SQLITE_ROW) {

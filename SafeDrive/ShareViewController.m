@@ -46,7 +46,32 @@
                                           NSLog(@"Success!");
                                       }
                                   }];
+    
+    self.swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeftGest)];
+    [_swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:_swipeLeft];
+    
+    self.swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRightGest)];
+    [_swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:_swipeRight];
 }
+
+- (void) viewDidAppear:(BOOL)animated {
+    self.view.frame = [[UIScreen mainScreen] applicationFrame];
+}
+
+-(void) swipeRightGest {
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+    
+    [self.tabBarController setSelectedIndex:selectedIndex - 1];
+}
+
+-(void) swipeLeftGest {
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+    
+    [self.tabBarController setSelectedIndex:selectedIndex + 1];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -121,7 +146,7 @@
     CLLocation *location = [[CLLocation alloc]initWithLatitude:[allStatus[counter] getLatitude] longitude:[allStatus[counter] getLongitude]];
     [geoCoder reverseGeocodeLocation: location completionHandler: ^(NSArray *placemarks, NSError *error) {
         CLPlacemark *myPlace = [placemarks lastObject];
-        self.message = [NSString stringWithFormat:@"Avoid %@,%@,%@ - there's a lot of traffic here!",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
+        self.message = [NSString stringWithFormat:@"Avoid %@,%@,%@ - there's a lot of traffic here! #traffic",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
     }];
     [self StatusUpdateWithAPICalls];
 }
@@ -130,7 +155,7 @@
     CLLocation *location = [[CLLocation alloc]initWithLatitude:[allStatus[counter] getLatitude] longitude:[allStatus[counter] getLongitude]];
     [geoCoder reverseGeocodeLocation: location completionHandler: ^(NSArray *placemarks, NSError *error) {
         CLPlacemark *myPlace = [placemarks lastObject];
-    self.message = [NSString stringWithFormat:@"Guys stay away from %@,%@,%@-its blocked!!",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
+    self.message = [NSString stringWithFormat:@"Guys stay away from %@,%@,%@-its blocked!! #blockedRoad",myPlace.subThoroughfare,myPlace.thoroughfare,myPlace.locality];
         }];
     [self StatusUpdateWithAPICalls];
 }

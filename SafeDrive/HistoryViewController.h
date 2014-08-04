@@ -14,5 +14,7 @@
 @property (retain,nonatomic) NSMutableArray *dates;
 @property (retain,nonatomic) NSMutableArray *violations;
 @property (weak, nonatomic) IBOutlet UITableView *Table;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeft;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeRight;
 
 @end

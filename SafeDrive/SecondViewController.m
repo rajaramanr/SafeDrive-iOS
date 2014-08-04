@@ -42,9 +42,12 @@
     obj=[JSON getInstance];
     allStatus = obj.reader.readJSON;
     geoCoder = [[CLGeocoder alloc] init];
-    
-    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(updateLocation) userInfo:nil repeats:YES]; //Timer is set for once in 5 seconds. Array elements will be accessed once in every 5 seconds.
 
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(updateLocation) userInfo:nil repeats:YES]; //Timer is set for once in 5 seconds. Array elements will be accessed once in every 5 seconds.
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    self.view.frame = [[UIScreen mainScreen] applicationFrame];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +58,6 @@
 
 -(void)updateLocation
 {
-
     [_mapView removeAnnotations:_mapView.annotations];
 
     NSNumber *longitude = [NSNumber numberWithDouble:[allStatus[counter] getLongitude]];
@@ -82,8 +84,6 @@
         [self.mapView addAnnotation:point];
     }];
     count+=2;
-
-
 }
 
 @end

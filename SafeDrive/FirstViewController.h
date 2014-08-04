@@ -13,5 +13,8 @@
 - (IBAction)readJson:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeed;
 @property (weak, nonatomic) IBOutlet UILabel *speedLimit;
+@property (weak, nonatomic) IBOutlet UILabel *curSpeedUnit;
+@property (weak, nonatomic) IBOutlet UILabel *speedLimUnit;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeft;
 
 @end
