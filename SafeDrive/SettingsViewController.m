@@ -45,7 +45,7 @@ int NUMBER_OF_SECTIONS = 2;
             }
             break;
         case 1:
-            noOfRows = 2;
+            noOfRows = ALERT_SECTION_STATIC_ROWS;
         default:
             break;
     }

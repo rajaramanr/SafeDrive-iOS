@@ -21,7 +21,7 @@
         NSLog(@"Error reading file: %@", error.localizedDescription);
     // maybe for debugging...
     NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
-    double timestamp = 0;
+    double lastTimestamp = 0;
     double lastSpeed = 0;
     double lastLat = 0;
     double lastLongt = 0;
@@ -29,7 +29,9 @@
     for(NSString* str in listArray) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData: [str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
         double timestampFromFile = [[dict valueForKey:@"timestamp"] doubleValue];
-        if(timestampFromFile != timestamp) {
+        NSString* tempString = [NSString stringWithFormat:@"%.1f", timestampFromFile];
+        timestampFromFile = [tempString doubleValue];
+        if(timestampFromFile != lastTimestamp) {
             if (status != NULL) {
                 if(status.latitude == 0) {
                     status.latitude = lastLat;
@@ -44,7 +46,7 @@
             }
             status = [[PresentStatus alloc] init];
             status.timeStamp = timestampFromFile;
-            timestamp = timestampFromFile;
+            lastTimestamp = timestampFromFile;
         }
         NSString *name = [dict valueForKey:@"name"];
         if([name isEqualToString:@"vehicle_speed"]) {

@@ -45,12 +45,19 @@ double threshold = 0.0;
     }
     thisRegion = [callAPI callAPI:[allStatus[counter] getLatitude] : [allStatus[counter] getLongitude]];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLocationBased"] == NO ){
-        NSLog(@"Only user defined speed limit");
         speedLimit = [[NSUserDefaults standardUserDefaults] doubleForKey:@"UserDefinedSpeed"];
-        NSLog(@"%f", speedLimit);
     } else {
-        NSLog(@"Obtaining from location");
         speedLimit = [thisRegion getSpeedLimit];
+        
+        // Do check for KMpH or MPH
+        
+        
+        // Converting the m/s speed to miles/hr
+        speedLimit = speedLimit * 2.33;
+        if(speedLimit == 0 || speedLimit > 200) {
+            // National speed limit
+            speedLimit = 60;
+        }
     }
     if([allStatus[counter] getSpeed] > speedLimit + threshold) {
         NSLog(@"Adding Violation");
@@ -62,8 +69,8 @@ double threshold = 0.0;
 }
 
 -(void) reflectOnUI: (double) currentSpeed : (double) speedLimit{
-    self.currentSpeed.text = [NSString stringWithFormat:@"%f",currentSpeed];
-    self.speedLimit.text = [NSString stringWithFormat:@"%f", speedLimit];
+    self.currentSpeed.text = [NSString stringWithFormat:@"%.2f",currentSpeed];
+    self.speedLimit.text = [NSString stringWithFormat:@"%.2f", speedLimit];
     CFURLRef soundFileURLRef;
     UInt32 soundID;
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"isAlertEnabled"]) {

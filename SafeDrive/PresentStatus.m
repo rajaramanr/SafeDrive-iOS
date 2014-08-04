@@ -27,6 +27,6 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat: @"Photo: Speed=%f Lat=%f Long=%f", self.speed, self.latitude, self.longitude];
+    return [NSString stringWithFormat: @"Speed Limit for Region: Speed=%f Lat=%f Long=%f", self.speed, self.latitude, self.longitude];
 }
 @end
